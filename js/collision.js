@@ -1,16 +1,18 @@
+// js/collision.js — P02 (casamento robusto de colisores de porta)
 import * as THREE from 'three';
 import { getPlayerPos } from './player.js';
 
 const PLAYER_RADIUS = 0.28;
 const PLAYER_EYE = 1.7;
 
-const colliders = [];   // { box: THREE.Box3, disabled: false }
+const colliders = [];   // { box, disabled, mesh, tag }
 
 export function initCollision() {
   colliders.length = 0;
 }
 
 export function addCollidersFromModel(model) {
+  let total = 0, doors = 0;
   model.traverse(obj => {
     if (!obj.isMesh) return;
     if (!obj.name.startsWith('COLLIDER_')) return;
@@ -21,21 +23,46 @@ export function addCollidersFromModel(model) {
     const box = geom.boundingBox.clone();
     box.applyMatrix4(obj.matrixWorld);
 
-    const entry = { box, disabled: false, mesh: obj };
-    colliders.push(entry);
+    const isDoor = obj.name.startsWith('COLLIDER_DOOR_');
+    if (isDoor) doors++;
 
-    // ocultar visualmente o colisor
+    colliders.push({
+      box,
+      disabled: false,
+      mesh: obj,
+      tag: isDoor ? 'door' : 'solid',
+    });
+
     obj.visible = false;
+    total++;
   });
-  console.log(`[EMERALD][collision] ${colliders.length} colisores extraídos.`);
+  console.log(`[EMERALD][collision] ${total} colisores (${doors} de porta).`);
 }
 
+/**
+ * Desativa/ativa o colisor de uma porta.
+ * Casa por (1) userData.emerald_door_id OU (2) prefixo de nome.
+ * O fallback por nome é o que garante o funcionamento em todos os GLBs.
+ */
 export function setDoorColliderDisabled(doorId, disabled) {
+  const tag = `COLLIDER_DOOR_${doorId}`;
+  let hits = 0;
   for (const c of colliders) {
-    if (c.mesh?.userData?.emerald_door_id === doorId) {
+    if (!c.mesh) continue;
+    const ud = c.mesh.userData || {};
+    const nm = c.mesh.name || '';
+    const byProp = ud.emerald_door_id === doorId;
+    const byName = nm === tag || nm.startsWith(tag);
+    if (byProp || byName) {
       c.disabled = disabled;
+      hits++;
     }
   }
+  if (hits === 0 && disabled) {
+    // Só avisa quando estamos tentando abrir — evita spam
+    console.warn(`[EMERALD][collision] colisor não encontrado: "${tag}"`);
+  }
+  return hits;
 }
 
 export function resolveCollisions() {
@@ -46,11 +73,9 @@ export function resolveCollisions() {
     if (c.disabled) continue;
 
     const b = c.box;
-    // Só colide se o colisor intersecta a faixa vertical do jogador
     if (b.max.y <= 0.05) continue;
     if (b.min.y >= PLAYER_EYE + 0.1) continue;
 
-    // AABB 2D (plano XZ)
     const minX = b.min.x - pr;
     const maxX = b.max.x + pr;
     const minZ = b.min.z - pr;

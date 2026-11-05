@@ -1,17 +1,22 @@
 {
   "name": "EMERALD_SCHOOL",
-  "version": "1.0.0",
-  "stage": "P01",
-  "generator": "blender/P01_school.py",
+  "version": "2.0.0",
+  "stage": "P02",
+  "generator": "blender/P02_architecture.py",
   "blender_version": "5.2 LTS",
   "glb_path": "assets/EMERALD_SCHOOL.glb",
   "root_collection": "EMERALD_GENERATED",
   "up_axis": "Y (glTF pós-conversão)",
   "units": "meters",
   "entry_start": { "x": -4, "y": 1.7, "z": 0, "yaw": -1.5707963267948966 },
+  "door_matching": {
+    "primary":  "mesh.userData.emerald_door_id === doorId",
+    "fallback": "mesh.name === 'COLLIDER_DOOR_' + doorId"
+  },
   "files": {
     "spaces": "spaces.json",
     "doors": "doors.json",
     "colliders": "colliders.json"
-  }
+  },
+  "sha256": null
 }
