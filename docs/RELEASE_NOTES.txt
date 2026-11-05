@@ -1,0 +1,131 @@
+
+---
+
+## 📄 `README.md` (final)
+
+```markdown
+# EMERALD School — CMEI Nordeste Virtual
+
+![EMERALD School](docs/screenshots/exterior.png)
+
+**Escola de Educação Infantil brasileira, modelada proceduralmente no Blender
+5.2 LTS e publicada como experiência Web 3D navegável no GitHub Pages.**
+
+> `STATUS: AGUARDANDO PUBLICAÇÃO`
+> *(substituir pela URL real após o primeiro deploy bem-sucedido)*
+
+---
+
+## O que é
+
+Uma escola conceitual de educação infantil em contexto nordestino, construída
+por script Python no Blender e exportada como `GLB` para navegação em primeira
+pessoa no navegador via Three.js.
+
+O objetivo é demonstrar, de ponta a ponta:
+
+- modelagem procedural de arquitetura escolar;
+- exportação GLB com hierarquia e colisores preservados;
+- aplicação Web estática sem build (ES modules + import map);
+- navegação FPS com colisão AABB;
+- portas automáticas por proximidade;
+- rotas de acessibilidade e marcadores informativos.
+
+---
+
+## Demonstração
+
+| Local | Imagem |
+|---|---|
+| Fachada e pórtico | `docs/screenshots/exterior.png` |
+| Sala de atividades | `docs/screenshots/sala01.png` |
+| Pátio coberto | `docs/screenshots/patio.png` |
+
+---
+
+## Tecnologias
+
+| Camada | Stack |
+|---|---|
+| Modelo 3D | Blender 5.2 LTS · Python API · glTF 2.0 |
+| Web | HTML5 · CSS3 · JavaScript (ES modules) |
+| Motor 3D | Three.js **0.160.0** (versão fixada) |
+| Publicação | GitHub Pages · GitHub Actions |
+
+Sem Node.js, sem bundler, sem backend. O repositório é servível diretamente
+como site estático.
+
+---
+
+## Controles
+
+| Tecla / ação | Efeito |
+|---|---|
+| `W` `A` `S` `D` / setas | Mover |
+| Mouse | Olhar (clique para capturar) |
+| `Shift` | Correr |
+| `E` | Abrir porta mais próxima (contingência) |
+| `Esc` | Liberar cursor |
+| `R` | Voltar à entrada |
+
+---
+
+## Funcionalidades
+
+- **Navegação FPS** com delta time e movimentação diagonal normalizada.
+- **Colisão** por AABB 2D contra colisores extraídos do GLB (`COLLIDER_*`).
+- **Portas automáticas** por proximidade, com pivô + folha independentes.
+- **8 rotas** de acessibilidade (`ROUTE_001` … `ROUTE_008`), com estados
+  `OK` / `INTERRUPTED` visíveis por cor.
+- **8 marcadores**, **4 obstáculos** e **3 perigos** posicionados no modelo.
+- **HUD de ambiente** — reconhece o espaço atual por bounding box.
+- **Minimapa esquemático** (não técnico) com jogador, rota e origem/destino.
+- **Modo Exploração** e **Modo Análise**.
+- **Painel de camadas** — arquitetura, rotas, marcadores, obstáculos, perigos.
+
+---
+
+## Estrutura
+
+```text
+EMERALD-SCHOOL/
+├── index.html
+├── README.md
+├── LICENSE.md
+├── VERSION.txt
+├── .gitignore
+├── .gitattributes
+├── .github/workflows/pages.yml
+├── css/style.css
+├── js/
+│   ├── main.js
+│   ├── scene.js
+│   ├── player.js
+│   ├── collision.js
+│   ├── doors.js
+│   ├── routes.js
+│   ├── markers.js
+│   ├── hud.js
+│   ├── minimap.js
+│   └── interface.js
+├── data/
+│   ├── model_manifest.json
+│   ├── doors.json
+│   ├── colliders.json
+│   ├── spaces.json
+│   ├── routes.json
+│   ├── markers.json
+│   ├── obstacles.json
+│   └── hazards.json
+├── assets/EMERALD_SCHOOL.glb
+├── blender/
+│   ├── P03_accessibility.py
+│   └── EMERALD_SCHOOL.blend
+└── docs/
+    ├── audit_report.md
+    ├── test_report.md
+    ├── P03_ACCESSIBILITY_REPORT.md
+    ├── publishing.md
+    ├── RELEASE_NOTES.md
+    ├── RELEASE_MANIFEST.md
+    └── screenshots/
