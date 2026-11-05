@@ -14,17 +14,57 @@ from mathutils import Vector
 # -------------------------------------------------------------- #
 # 0. CONFIGURAÇÃO
 # -------------------------------------------------------------- #
-try:
-    PROJECT_ROOT = os.path.dirname(os.path.dirname(bpy.data.filepath)) if bpy.data.filepath else os.getcwd()
-except Exception:
-    PROJECT_ROOT = os.getcwd()
-if not PROJECT_ROOT or PROJECT_ROOT == os.sep:
-    PROJECT_ROOT = os.getcwd()
+# -------------------------------------------------------------- #
+# 0. CONFIGURAÇÃO — resolução segura do diretório raiz
+# -------------------------------------------------------------- #
+def resolve_project_root():
+    """Retorna a raiz do projeto de forma segura (sem cair em Program Files)."""
+    # 1) .blend já salvo?  Usa a pasta acima de blender/
+    if bpy.data.filepath:
+        p = os.path.dirname(bpy.data.filepath)
+        if os.path.basename(p).lower() == "blender":
+            return os.path.dirname(p)
+        return p
+
+    # 2) Override por variável de ambiente (útil para CI)
+    env = os.environ.get("EMERALD_ROOT")
+    if env and os.path.isdir(env):
+        return env
+
+    # 3) Locais comuns do usuário (Desktop/Documents, incluindo OneDrive)
+    home = os.path.expanduser("~")
+    candidates = [
+        os.path.join(home, "Desktop", "EMERALD-SCHOOL"),
+        os.path.join(home, "Documents", "EMERALD-SCHOOL"),
+        os.path.join(home, "OneDrive", "Desktop", "EMERALD-SCHOOL"),
+        os.path.join(home, "OneDrive", "Documents", "EMERALD-SCHOOL"),
+        os.path.join(home, "EMERALD-SCHOOL"),
+    ]
+    for c in candidates:
+        if os.path.isdir(c):
+            return c
+
+    # 4) Fallback: cria em Desktop (ou home se Desktop não existir)
+    desktop = os.path.join(home, "Desktop")
+    base = desktop if os.path.isdir(desktop) else home
+    return os.path.join(base, "EMERALD-SCHOOL")
+
+PROJECT_ROOT = resolve_project_root()
+print(f"[EMERALD] PROJECT_ROOT = {PROJECT_ROOT}")
 
 GLB_OUT   = os.path.join(PROJECT_ROOT, "assets", "EMERALD_SCHOOL.glb")
 BLEND_OUT = os.path.join(PROJECT_ROOT, "blender", "EMERALD_SCHOOL.blend")
-os.makedirs(os.path.dirname(GLB_OUT), exist_ok=True)
-os.makedirs(os.path.dirname(BLEND_OUT), exist_ok=True)
+
+for d in (os.path.dirname(GLB_OUT), os.path.dirname(BLEND_OUT)):
+    try:
+        os.makedirs(d, exist_ok=True)
+    except PermissionError as e:
+        raise RuntimeError(
+            f"Sem permissão para criar '{d}'.\n"
+            f"Solução 1: salve o .blend como 'EMERALD-SCHOOL/blender/EMERALD_SCHOOL.blend' e rode novamente.\n"
+            f"Solução 2: defina a variável de ambiente EMERALD_ROOT para o caminho do projeto.\n"
+            f"Erro original: {e}"
+        )
 
 # Constantes arquitetônicas
 WALL_T   = 0.15

@@ -1,8 +1,9 @@
+// js/main.js — versão P01 (50 linhas, sem classList, sem animate global)
 import { initScene, loadModel, addToScene, startRenderLoop, bindResize } from './scene.js';
-import { initPlayer, updatePlayer, getPlayerPos } from './player.js';
+import { initPlayer, updatePlayer } from './player.js';
 import { initCollision, addCollidersFromModel, resolveCollisions } from './collision.js';
 import { initDoors, updateDoors } from './doors.js';
-import { setProgress, showStartButton, hideLoading, hideControlsInfo, showControlsInfo, showError } from './interface.js';
+import { setProgress, showStartButton, hideLoading, showControlsInfo, showError } from './interface.js';
 
 async function bootstrap() {
   try {
@@ -18,24 +19,17 @@ async function bootstrap() {
     initDoors(model);
 
     hideLoading();
-    showStartButton(() => {
-      hideLoading();
-      showControlsInfo();
-    });
-
+    showStartButton(() => showControlsInfo());
     bindResize();
 
-    // loop
-    const clock = { last: performance.now() };
+    let last = performance.now();
     function frame(now) {
-      const dt = Math.min(0.05, (now - clock.last) / 1000);
-      clock.last = now;
-
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
       updatePlayer(dt);
       resolveCollisions();
       updateDoors(dt);
       startRenderLoop();
-
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
