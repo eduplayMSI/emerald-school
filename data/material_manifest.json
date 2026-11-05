@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "stage": "P07",
+    "blender_version": "5.2 LTS",
+    "web_compat": "three@0.160.0",
+    "textures_used": false,
+    "uv_required": false,
+    "notes": "Biblioteca PBR de cores sólidas com roughness/metallic/alpha calibrados. Sem texturas externas, sem UV unwrap. Estratégia escolhida para preservar estabilidade do pipeline glTF→Three.js e evitar dependências externas."
+  },
+  "categories": {
+    "walls":      "Pintura acrílica fosca sobre reboco, lavável",
+    "floors":     "Cerâmica, vinílico e porcelanato",
+    "roofs":      "Telha cerâmica e estrutura metálica",
+    "structure":  "Concreto armado e detalhes pintados",
+    "wood":       "Madeira maciça e laminada",
+    "metal":      "Alumínio e aço pintado",
+    "glass":      "Vidro temperado translúcido",
+    "ground":     "Solo natural e grama",
+    "vegetation": "Vegetação rasteira",
+    "playground": "Borracha, areia e equipamentos",
+    "surfaces":   "Elementos auxiliares (juntas, rodapés, soleiras, drenagem)"
+  },
+  "materials": [
+    {"id": "EM_M_wall_plaster_white",   "category": "walls",      "base_color": [0.95, 0.93, 0.89, 1.0], "roughness": 0.88, "metallic": 0.00, "alpha": 1.0, "use": "forros, corredor, marquise interna"},
+    {"id": "EM_M_wall_sun_yellow",      "category": "walls",      "base_color": [0.96, 0.82, 0.25, 1.0], "roughness": 0.85, "metallic": 0.00, "alpha": 1.0, "use": "paredes internas e externas (cor do memorial #F4D03F)"},
+
+    {"id": "EM_M_floor_ceramic_beige",  "category": "floors",     "base_color": [0.82, 0.76, 0.65, 1.0], "roughness": 0.55, "metallic": 0.00, "alpha": 1.0, "use": "corredor e calçada de entrada"},
+    {"id": "EM_M_floor_wood_ceramic",   "category": "floors",     "base_color": [0.79, 0.66, 0.46, 1.0], "roughness": 0.60, "metallic": 0.00, "alpha": 1.0, "use": "salas de atividades (cerâmica madeira clara)"},
+    {"id": "EM_M_floor_vinyl_white",    "category": "floors",     "base_color": [0.98, 0.97, 0.95, 1.0], "roughness": 0.60, "metallic": 0.00, "alpha": 1.0, "use": "berçários (vinílico antibacteriano)"},
+    {"id": "EM_M_floor_ceramic_grey",   "category": "floors",     "base_color": [0.61, 0.64, 0.66, 1.0], "roughness": 0.55, "metallic": 0.00, "alpha": 1.0, "use": "sanitários e cozinha"},
+    {"id": "EM_M_floor_ceramic_cafe",   "category": "floors",     "base_color": [0.75, 0.79, 0.81, 1.0], "roughness": 0.55, "metallic": 0.00, "alpha": 1.0, "use": "refeitório"},
+
+    {"id": "EM_M_roof_terracotta",      "category": "roofs",      "base_color": [0.72, 0.26, 0.20, 1.0], "roughness": 0.72, "metallic": 0.00, "alpha": 1.0, "use": "telhado em duas águas"},
+    {"id": "EM_M_roof_metal",           "category": "roofs",      "base_color": [0.78, 0.78, 0.80, 1.0], "roughness": 0.45, "metallic": 0.70, "alpha": 1.0, "use": "marquise de entrada"},
+
+    {"id": "EM_M_column_concrete",      "category": "structure",  "base_color": [0.88, 0.86, 0.82, 1.0], "roughness": 0.80, "metallic": 0.00, "alpha": 1.0, "use": "colunas do pátio, pilares gerais"},
+    {"id": "EM_M_column_orange",        "category": "structure",  "base_color": [0.92, 0.58, 0.30, 1.0], "roughness": 0.60, "metallic": 0.00, "alpha": 1.0, "use": "pilares do pórtico e marquise (destaque)"},
+
+    {"id": "EM_M_door_wood",            "category": "wood",       "base_color": [0.48, 0.33, 0.20, 1.0], "roughness": 0.70, "metallic": 0.00, "alpha": 1.0, "use": "folhas de porta 0.90x2.10"},
+    {"id": "EM_M_door_frame_white",     "category": "metal",      "base_color": [0.92, 0.92, 0.92, 1.0], "roughness": 0.55, "metallic": 0.00, "alpha": 1.0, "use": "batentes e esquadrias"},
+
+    {"id": "EM_M_glass_window",         "category": "glass",      "base_color": [0.72, 0.86, 0.95, 1.0], "roughness": 0.05, "metallic": 0.00, "alpha": 0.40, "use": "janelas de vidro + cobertura do pátio"},
+
+    {"id": "EM_M_ground_grass_base",    "category": "ground",     "base_color": [0.55, 0.68, 0.35, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "SITE_TERRAIN base"},
+    {"id": "EM_M_grass_light",          "category": "vegetation", "base_color": [0.60, 0.72, 0.40, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "patches claros"},
+    {"id": "EM_M_grass_medium",         "category": "vegetation", "base_color": [0.52, 0.65, 0.32, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "patches médios"},
+    {"id": "EM_M_grass_dark",           "category": "vegetation", "base_color": [0.44, 0.56, 0.27, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "patches escuros"},
+    {"id": "EM_M_earth",                "category": "ground",     "base_color": [0.62, 0.52, 0.40, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "manchas de terra batida"},
+    {"id": "EM_M_bush",                 "category": "vegetation", "base_color": [0.28, 0.48, 0.24, 1.0], "roughness": 0.90, "metallic": 0.00, "alpha": 1.0, "use": "arbustos"},
+
+    {"id": "EM_M_sand_playground",      "category": "playground", "base_color": [0.83, 0.77, 0.62, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "tanque de areia"},
+    {"id": "EM_M_patio_rubber",         "category": "playground", "base_color": [0.72, 0.30, 0.28, 1.0], "roughness": 0.85, "metallic": 0.00, "alpha": 1.0, "use": "piso do pátio coberto (borracha reciclada)"},
+    {"id": "EM_M_playground_equipment", "category": "playground", "base_color": [0.22, 0.60, 0.78, 1.0], "roughness": 0.55, "metallic": 0.20, "alpha": 1.0, "use": "escorregador e balanço"},
+
+    {"id": "EM_M_grout",                "category": "surfaces",   "base_color": [0.55, 0.50, 0.45, 1.0], "roughness": 0.95, "metallic": 0.00, "alpha": 1.0, "use": "juntas de piso cerâmico"},
+    {"id": "EM_M_skirting",             "category": "surfaces",   "base_color": [0.72, 0.66, 0.58, 1.0], "roughness": 0.80, "metallic": 0.00, "alpha": 1.0, "use": "rodapé 10cm"},
+    {"id": "EM_M_threshold",            "category": "surfaces",   "base_color": [0.78, 0.72, 0.62, 1.0], "roughness": 0.55, "metallic": 0.10, "alpha": 1.0, "use": "soleira de porta"},
+    {"id": "EM_M_drain",                "category": "surfaces",   "base_color": [0.38, 0.38, 0.42, 1.0], "roughness": 0.50, "metallic": 0.40, "alpha": 1.0, "use": "canaleta de drenagem"},
+    {"id": "EM_M_paving_line",          "category": "surfaces",   "base_color": [0.55, 0.52, 0.50, 1.0], "roughness": 0.85, "metallic": 0.00, "alpha": 1.0, "use": "juntas da calçada"}
+  ],
+  "protected_technical": [
+    "EM_invisible", "EM_route_line", "EM_marker_info", "EM_marker_obst", "EM_marker_haz", "EM_door_metal"
+  ],
+  "old_to_new_mapping": {
+    "EM_floor_beige":   "EM_M_floor_ceramic_beige",
+    "EM_floor_class":   "EM_M_floor_wood_ceramic",
+    "EM_floor_berc":    "EM_M_floor_vinyl_white",
+    "EM_floor_wc":      "EM_M_floor_ceramic_grey",
+    "EM_floor_cafe":    "EM_M_floor_ceramic_cafe",
+    "EM_wall_yellow":   "EM_M_wall_sun_yellow",
+    "EM_wall_white":    "EM_M_wall_plaster_white",
+    "EM_roof_tile":     "EM_M_roof_terracotta",
+    "EM_roof_metal":    "EM_M_roof_metal",
+    "EM_column":        "EM_M_column_concrete",
+    "EM_column_accent": "EM_M_column_orange",
+    "EM_door_wood":     "EM_M_door_wood",
+    "EM_door_frame":    "EM_M_door_frame_white",
+    "EM_glass":         "EM_M_glass_window",
+    "EM_ground":        "EM_M_ground_grass_base",
+    "EM_sand":          "EM_M_sand_playground",
+    "EM_patio_rubber":  "EM_M_patio_rubber",
+    "EM_play_equip":    "EM_M_playground_equipment",
+    "P06_grout":        "EM_M_grout",
+    "P06_skirt":        "EM_M_skirting",
+    "P06_grass_a":      "EM_M_grass_light",
+    "P06_grass_b":      "EM_M_grass_medium",
+    "P06_grass_c":      "EM_M_grass_dark",
+    "P06_earth":        "EM_M_earth",
+    "P06_drain":        "EM_M_drain",
+    "P06_pave_line":    "EM_M_paving_line",
+    "P06_threshold":    "EM_M_threshold",
+    "P06_bush":         "EM_M_bush"
+  }
+}

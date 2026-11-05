@@ -1,4 +1,4 @@
-// js/main.js — P03
+import * as THREE from 'three'; // IMPORTAÇÃO ESSENCIAL AQUI
 import { initScene, loadModel, addToScene, startRenderLoop, bindResize, getCamera, getScene } from './scene.js';
 import { initPlayer, updatePlayer, resetPosition } from './player.js';
 import { initCollision, addCollidersFromModel, resolveCollisions } from './collision.js';
@@ -18,9 +18,35 @@ async function bootstrap() {
     initPlayer();
     initCollision();
 
-    const model = await loadModel('./assets/EMERALD_SCHOOL.glb', setProgress);
+    // Cache-buster atualizado para ?v=8
+    const model = await loadModel('./assets/EMERALD_SCHOOL.glb?v=8', setProgress);
     addToScene(model);
     window.__emerald_model = model;
+
+    // FORÇAR COR DO PISO (À PROVA DE FALHAS)
+    const floorColors = [
+        { match: 'floor_corridor', color: 0xD1C6B4 },
+        { match: 'floor_spc_class', color: 0xC9A882 },
+        { match: 'floor_spc_berc', color: 0xFAFAFA },
+        { match: 'floor_spc_wc', color: 0x9CA3A8 },
+        { match: 'floor_spc_kitchen', color: 0x9CA3A8 },
+        { match: 'floor_spc_cafe', color: 0xBFC9CE },
+        { match: 'floor_patio', color: 0xB84D47 }
+    ];
+
+    model.traverse(child => {
+        if (!child.isMesh) return;
+        const name = child.name.toLowerCase();
+        const match = floorColors.find(f => name.includes(f.match));
+        if (match) {
+            child.material = new THREE.MeshStandardMaterial({
+                color: match.color,
+                roughness: 0.65,
+                metalness: 0.0
+            });
+        }
+    });
+
     enableShadows(model);
     addCollidersFromModel(model);
     initDoors(model);
@@ -38,9 +64,8 @@ async function bootstrap() {
     showStartButton(() => showControlsInfo());
     bindResize();
 
-    // Clique: selecionar marcador (se Pointer Lock não estiver ativo)
     document.addEventListener('click', e => {
-      if (document.pointerLockElement) return;  // durante o lock, clique não interage com DOM
+      if (document.pointerLockElement) return;
       const hit = pick(e.clientX, e.clientY, getCamera());
       if (hit) showMarkerPanel(hit.payload, hit.kind);
     });
@@ -65,12 +90,10 @@ async function bootstrap() {
 }
 
 function handleTeleport(waypoint) {
-  // waypoint = [x, y, z] em coords Web
   import('./player.js').then(({ getPlayerPos }) => {
     const p = getPlayerPos();
     p.x = waypoint[0];
     p.z = waypoint[2];
-    // y é altura de piso; mantemos altura do olho (1.7)
     console.log(`[EMERALD] teleport demonstrativo → (${p.x.toFixed(2)}, ${p.z.toFixed(2)})`);
   });
 }

@@ -18,11 +18,16 @@ export function initScene() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  
+  // P10: Tone mapping para evitar cores estouradas e escurecimento
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+  
   document.body.appendChild(renderer.domElement);
 
-  // Luz solar nordestina
-  const sun = new THREE.DirectionalLight(0xFFF4E0, 2.4);
-  sun.position.set(40, 70, 25);
+  // Sol Nordestino
+  const sun = new THREE.DirectionalLight(0xFFFAED, 2.8);
+  sun.position.set(45, 80, 20);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
   sun.shadow.camera.left = -60;
@@ -30,16 +35,19 @@ export function initScene() {
   sun.shadow.camera.top = 60;
   sun.shadow.camera.bottom = -60;
   sun.shadow.camera.near = 0.5;
-  sun.shadow.camera.far = 200;
+  sun.shadow.camera.far = 250;
+  sun.shadow.bias = -0.0005;
   scene.add(sun);
 
-  const hemi = new THREE.HemisphereLight(0xBEE3FF, 0x8B7355, 0.7);
+  // LUZ NEUTRA: Impede que as paredes amarelas fiquem verdes
+  const hemi = new THREE.HemisphereLight(0xffffff, 0xdddddd, 0.9);
   scene.add(hemi);
 
-  const amb = new THREE.AmbientLight(0xffffff, 0.25);
+  // Luz ambiente para leitura de interiores
+  const amb = new THREE.AmbientLight(0xffffff, 0.35);
   scene.add(amb);
 
-  // chão de teste (o GLB traz o seu próprio, isto fica por baixo)
+  // Chão de teste (fallback)
   const groundMat = new THREE.MeshStandardMaterial({ color: 0x6e8b4a, roughness: 0.95 });
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), groundMat);
   ground.rotation.x = -Math.PI / 2;

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "stage": "P09",
+  "sun": {
+    "intensity": 4.5,
+    "color_hex": "#FFF2D9",
+    "angle_degrees": 50,
+    "shadows": "soft"
+  },
+  "interior_lights": {
+    "type": "point",
+    "intensity": 150,
+    "count": 8
+  },
+  "webgl_rendering": {
+    "tone_mapping": "ACESFilmicToneMapping",
+    "exposure": 1.1
+  }
+}

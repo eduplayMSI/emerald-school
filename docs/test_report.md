@@ -46,3 +46,15 @@
 # 5) http://localhost:8000/  (Ctrl+Shift+R)
 # 6) Clicar em "MODO ANÁLISE" para ver rotas + painel lateral
 # 7) Selecionar ROUTE_007 (mostra o estado INTERRUPTED em vermelho)
+
+## Gate P09 — Iluminação e Atmosfera
+
+| ID  | Procedimento | Esperado | Status |
+|-----|--------------|----------|--------|
+| G49 | Executar P09 no Blender | Console mostra "[P09] Blend salvo" | ⬜ |
+| G50 | Abrir localhost:8000 | Sem erros de WebGL no console | ⬜ |
+| G51 | Verificar Piso | O piso NÃO está verde (está bege/madeira) | ⬜ |
+| G52 | Verificar Paredes | Sem tom esverdeado (amarelo puro) | ⬜ |
+| G53 | Verificar Teto | Sem tom marrom (branco/cinza claro) | ⬜ |
+| G54 | Verificar Sombras | Sombras nítidas projetadas pelo sol | ⬜ |
+| G55 | Navegação | WASD, portas e modo análise funcionando | ⬜ |

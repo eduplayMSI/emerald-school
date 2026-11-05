@@ -1,22 +1,28 @@
 {
   "name": "EMERALD_SCHOOL",
-  "version": "2.0.0",
-  "stage": "P02",
-  "generator": "blender/P02_architecture.py",
+  "version": "4.0.0",
+  "stage": "P10",
+  "generator": "blender/P10_final.py",
   "blender_version": "5.2 LTS",
   "glb_path": "assets/EMERALD_SCHOOL.glb",
   "root_collection": "EMERALD_GENERATED",
   "up_axis": "Y (glTF pós-conversão)",
   "units": "meters",
   "entry_start": { "x": -4, "y": 1.7, "z": 0, "yaw": -1.5707963267948966 },
-  "door_matching": {
-    "primary":  "mesh.userData.emerald_door_id === doorId",
-    "fallback": "mesh.name === 'COLLIDER_DOOR_' + doorId"
+  "notes": {
+    "status": "Release Candidate",
+    "floor_fix": "Overrides aplicados em JS (main.js).",
+    "lighting_fix": "ACESFilmicToneMapping e HemisphereLight neutra."
   },
   "files": {
     "spaces": "spaces.json",
-    "doors": "doors.json",
-    "colliders": "colliders.json"
+    "routes": "routes.json",
+    "markers": "markers.json",
+    "obstacles": "obstacles.json",
+    "hazards": "hazards.json",
+    "materials": "material_manifest.json",
+    "furniture": "furniture_manifest.json",
+    "lighting": "lighting_manifest.json"
   },
-  "sha256": null
+  "sha256": "7107B1B62F8E6825F41E2FB929C5A661CC7E9E81376F2383E828C628DCE"
 }
