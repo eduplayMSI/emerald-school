@@ -1,0 +1,12 @@
+{
+  "note": "Colisores são extraídos do GLB por prefixo COLLIDER_. Este arquivo documenta a convenção.",
+  "prefix": "COLLIDER_",
+  "kinds": {
+    "wall_segment": "COLLIDER_WALL_*",
+    "window_opening": "COLLIDER_WALL_*_WIN* (bloqueia a janela por completo)",
+    "door_leaf": "COLLIDER_DOOR_* (desativado dinamicamente quando a porta abre)",
+    "column": "COLLIDER_COL_*"
+  },
+  "player_radius_m": 0.28,
+  "player_eye_height_m": 1.7
+}

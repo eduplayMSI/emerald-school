@@ -1,0 +1,205 @@
+Para criar uma modelagem 3D precisa e visualmente coerente no Blender para um CMEI (Centro Municipal de Educação Infantil) típico do Nordeste brasileiro, utilizarei como base o **Projeto Padrão Tipo 1 (56 vagas)** do FNDE/MEC, adaptado às características climáticas e construtivas da região Nordeste (ventilação cruzada, proteção solar, materiais locais).
+
+Abaixo está a descrição técnica detalhada, dividida por setores, com dimensões (em metros), materiais, texturas, iluminação e mobiliário.
+
+---
+
+### **1. Visão Geral e Contexto Climático (Nordeste)**
+*   **Arquitetura:** Térrea (para segurança e facilidade de acesso), telhado em duas águas (para escoamento de chuvas fortes) ou quatro águas. Coberturas com beirais largos (1.5m a 2.0m) para sombrear as paredes e evitar ganho de calor solar.
+*   **Ventilação:** Janelas altas (no nível dos olhos de adultos) para permitir ventilação cruzada sem expor as crianças diretamente ao sol.
+*   **Cores:** Tons vibrantes e quentes (amarelo, laranja, azul claro, verde) nas fachadas e paredes internas para estimular a criatividade e refletir a luz natural abundante.
+*   **Iluminação Natural:** Predominante. Sombras duras no exterior (meio-dia) e suaves nos pátios cobertos.
+*   **Gravidade:** Padrão terrestre (9.81 m/s²).
+
+---
+
+### **2. Estrutura Principal (Bloco Administrativo e Pedagógico)**
+
+#### **A. Corredor Principal (Circulação)**
+*   **Função:** Conectar todas as salas e setores.
+*   **Dimensões:** Largura: **1.80m** | Comprimento: Variável (depende da planta) | Altura Livre: **2.80m**.
+*   **Piso:** Cerâmica antiderrapante 60x60cm, cor clara (bege ou cinza claro) para refletir luz.
+*   **Paredes:** Alvenaria rebocada, pintadas com tinta látex atóxica cor "Amarelo Sol" (#F4D03F) até 1.20m de altura (zoolha) e branco acima.
+*   **Iluminação:** 2 luminárias LED 24W (4000K) por corredor de 10m. Luz difusa, sem reflexos no piso.
+*   **Mobiliário:**
+    *   *Banco de espera:* Não é comum em corredores, mas pode haver nichos na parede para mochilas.
+    *   *Nichos na parede:* Profundidade: **0.25m** | Altura: **0.40m** | Largura: **0.60m**. Material: Madeira laminada ou plástico injetado.
+
+#### **B. Salas de Atividades (4 salas, para 14 crianças cada)**
+*   **Dimensões:**
+    *   **Planta:** **7.0m x 7.0m** (49 m²).
+    *   **Pé-direito:** **3.0m** (com forro acústico a 2.80m).
+*   **Paredes:**
+    *   **Inferior (0-1.20m):** Tinta látex cor "Azul Céu" (#85C1E9) ou "Verde Água" (#58D68D). Textura: Fosca (anti-reflexo).
+    *   **Superior (1.20m-3.0m):** Branco (#FFFFFF). Textura: Fosca.
+    *   **Detalhe:** Faixa decorativa de azulejos ou tinta fosca na linha do pé-direito.
+*   **Piso:** Vinílico ou cerâmica antiderrapante cor "Madeira Clara" (#D2B48C) ou "Cimento Queimado" (#95A5A6).
+*   **Janelas:** 2 janelas grandes (2.0m x 1.5m) com peitoril a 0.90m do chão para segurança, mas com vidros temperados. Caixilhos em alumínio branco.
+*   **Iluminação:**
+    *   4 luminárias LED 32W (5000K - luz fria para foco) no teto.
+    *   Luz natural entra pelas janelas, criando manchas de luz no piso. Sombras das persianas venetianas (lamelas brancas).
+*   **Mobiliário (Detalhado):**
+    1.  **Mesa de Atividades:**
+        *   *Dimensões:* Comprimento: **1.20m** | Largura: **0.60m** | Altura: **0.45m**.
+        *   *Material:* Plástico injetado (corpo) e pernas em aço tubular pintado (cor primária: Vermelho #E74C3C ou Amarelo #F1C40F).
+        *   *Topo:* Liso, resistente a riscos.
+    2.  **Cadeira Infantil:**
+        *   *Dimensões:* Assento: **0.30m x 0.30m** | Altura do assento: **0.25m** | Altura total: **0.50m**.
+        *   *Material:* Plástico moldado, ergonômico, com encosto curvado. Cor: Variada (azul, verde, rosa).
+    3.  **Armários Baixos (Organização):**
+        *   *Dimensões:* Altura: **0.80m** | Largura: **1.20m** | Profundidade: **0.40m**.
+        *   *Material:* MDF com pintura em látex cor "Marrom Madeira" ou "Branco". Gavetas com puxadores embutidos.
+    4.  **Estante de Livros (Baixa):**
+        *   *Dimensões:* Altura: **0.70m** | Largura: **0.80m** | Profundidade: **0.30m**.
+        *   *Material:* Madeira ou plástico.
+
+#### **C. Berçário (2 salas, para 20 crianças cada)**
+*   **Dimensões:** **6.0m x 6.0m** (36 m²). Pé-direito: **3.0m**.
+*   **Paredes:** Cor "Rosa Claro" (#F5B7B1) ou "Lilás" (#D2B4DE) até 1.20m. Branco acima.
+*   **Piso:** Vinílico antibacteriano cor "Branco Gelo" (#FDFEFE).
+*   **Iluminação:** Mais suave (3000K - luz quente). 2 luminárias LED 24W.
+*   **Mobiliário:**
+    1.  **Berço de Berçário:**
+        *   *Dimensões:* Comprimento: **1.20m** | Largura: **0.60m** | Altura dos laterais: **0.40m**.
+        *   *Material:* Aço tubular pintado (branco) + Colchão de espuma densa (20cm de espessura).
+    2.  **Troca de Fraldas:**
+        *   *Dimensões:* Mesa fixa na parede: **1.20m x 0.60m** | Altura: **0.80m**.
+        *   *Material:* Plástico injetado, superfície lisa e fácil de limpar.
+
+#### **D. Sala de Multiuso / Biblioteca**
+*   **Dimensões:** **8.0m x 6.0m** (48 m²).
+*   **Paredes:** Cor "Verde Musgo" (#52BE80) até 1.20m. Branco acima.
+*   **Piso:** Tapete de EVA intertravado (cor variada: amarelo, azul, verde) em parte do piso para área de leitura.
+*   **Mobiliário:**
+    1.  **Almofadas Grandes:**
+        *   *Dimensões:* **0.50m x 0.50m x 0.20m**.
+        *   *Material:* Tecido antialérgico, cor laranja (#E67E22).
+    2.  **Estantes de Livros (Baixas):**
+        *   *Dimensões:* Altura: **0.90m** | Largura: **1.50m**.
+
+---
+
+### **3. Setor de Serviços (Cozinha, Lavanderia, Refeitório)**
+
+#### **A. Cozinha**
+*   **Dimensões:** **5.0m x 4.0m**.
+*   **Piso:** Cerâmica antiderrapante cinza, com ralo no centro.
+*   **Paredes:** Azulejos brancos até o teto (para higiene).
+*   **Mobiliário:**
+    1.  **Balcão de Preparo:**
+        *   *Dimensões:* Comprimento: **2.40m** | Largura: **0.60m** | Altura: **0.90m**.
+        *   *Material:* Aço Inox (textura metálica polida, reflexiva).
+    2.  **Fogão Industrial:**
+        *   *Dimensões:* **1.20m x 0.60m x 0.80m**.
+        *   *Material:* Aço Inox.
+
+#### **B. Refeitório**
+*   **Dimensões:** **8.0m x 6.0m**.
+*   **Piso:** Cerâmica clara.
+*   **Iluminação:** 4 luminárias LED 32W.
+*   **Mobiliário:**
+    1.  **Mesa Retangular Comunitária:**
+        *   *Dimensões:* Comprimento: **2.40m** | Largura: **0.80m** | Altura: **0.55m**.
+        *   *Material:* Plástico injetado (cor branca ou amarela).
+    2.  **Banco Contínuo:**
+        *   *Dimensões:* Comprimento: **2.40m** | Largura: **0.35m** | Altura: **0.40m**.
+        *   *Material:* Plástico injetado (cor complementar à mesa).
+
+---
+
+### **4. Setor de Higiene (Banheiros e Fraldários)**
+
+#### **A. Banheiros Infantis (2 unidades)**
+*   **Dimensões:** **3.0m x 2.5m**.
+*   **Piso:** Cerâmica antiderrapante cinza, com ralo linear.
+*   **Paredes:** Azulejos brancos até o teto.
+*   **Iluminação:** 1 luminária LED 18W (à prova de umidade).
+*   **Mobiliário:**
+    1.  **Sanitas Infantis:**
+        *   *Dimensões:* Altura: **0.30m** | Largura: **0.35m**.
+        *   *Material:* Porcelana branca.
+    2.  **Lavatórios Infantis:**
+        *   *Dimensões:* Altura: **0.45m** | Largura: **0.40m**.
+        *   *Material:* Porcelana branca.
+    3.  **Espelhos:**
+        *   *Dimensões:* Largura: **0.60m** | Altura: **0.80m**.
+        *   *Material:* Vidro espelhado, fixado a 0.50m do chão.
+
+---
+
+### **5. Área Externa e Parque (Pátio Coberto e Descoberto)**
+
+#### **A. Pátio Coberto (Área de Lazer)**
+*   **Dimensões:** **12.0m x 6.0m**.
+*   **Cobertura:** Estrutura metálica (telha de zinco ou policarbonato translúcido) com pé-direito de **3.5m**.
+*   **Piso:** Borracha reciclada (cor vermelha ou azul) ou cerâmica antiderrapante.
+*   **Iluminação:** Luz natural filtrada pela cobertura. Sombras projetadas pela estrutura do telhado (listras de sombra).
+*   **Mobiliário:**
+    1.  **Bancos de Madeira:**
+        *   *Dimensões:* Comprimento: **1.50m** | Largura: **0.40m** | Altura: **0.45m**.
+        *   *Material:* Madeira eucalipto tratada (textura de veios, cor marrom natural).
+
+#### **B. Playground Descoberto**
+*   **Piso:** Grama natural (textura de grama baixa, cor verde vibrante) ou areia (textura granulada, cor bege) embaixo dos brinquedos.
+*   **Iluminação:** Sol direto. Sombras duras e definidas.
+
+#### **C. Ornamentos com Materiais Recicláveis (Destaque Criativo)**
+Para modelar no Blender, use texturas com detalhes de desgaste e pintura.
+
+1.  **Escultura de Pneus Pintados:**
+    *   **Descrição:** Pilha de 3 ou 4 pneus de caminhão ou carro, cortados ao meio ou inteiros, empilhados e pintados com cores vibrantes (vermelho, amarelo, azul).
+    *   **Dimensões:** Diâmetro do pneu: **0.80m** | Largura: **0.25m**.
+    *   **Textura:** Borracha preta natural nas bordas internas, tinta fosca colorida nas laterais. Detalhes de sujeira e desgaste.
+    *   **Uso:** Podem ser usados como assentos ou parte de um brinquedo de escalada.
+
+2.  **Caixas de Papelão Reforçadas (Jogos de Escalar):**
+    *   **Descrição:** Caixas de papelão grandes (de eletrodomésticos) revestidas com fita adesiva larga ou lona plástica, pintadas com cores primárias.
+    *   **Dimensões:** **0.50m x 0.50m x 0.40m**.
+    *   **Textura:** Superfície áspera do papelão, com veios de cola e fita. Cores: Amarelo, Azul, Vermelho.
+    *   **Uso:** Empilhadas para formar torres de brincadeira.
+
+3.  **Tijolos de Garrafa PET:**
+    *   **Descrição:** Paredes baixas ou bancos feitos com garrafas PET enchidas com areia ou água, empacotadas em uma rede ou caixotes de madeira.
+    *   **Dimensões:** Garrafa: **0.20m x 0.08m**. Caixote: **1.00m x 0.50m x 0.50m**.
+    *   **Textura:** Plástico transparente/acetinado das garrafas, com líquido ou areia dentro visível.
+
+4.  **Caminhão de Madeira Reciclada:**
+    *   **Descrição:** Estrutura de pallets montada como um caminhão, com rodas de pneu real.
+    *   **Dimensões:** Comprimento: **2.00m** | Largura: **1.00m** | Altura: **1.20m**.
+    *   **Textura:** Madeira de pallet (textura rústica, pregos visíveis), rodas de pneu preto.
+
+---
+
+### **6. Detalhes de Iluminação e Sombras para Blender**
+
+*   **Luz Solar (Sun Light):**
+    *   **Intensidade:** Alta (1.0 ou mais, dependendo do render engine).
+    *   **Cor:** Branco quente (#FFF4E0) para simular o sol do Nordeste.
+    *   **Sombra:** Hard Shadow (sombras duras e definidas). Use *Ray Shadow* para precisão.
+    *   **Ângulo:** Posicione o sol em 45 graus para criar sombras diagonais marcantes nas fachadas e no pátio.
+
+*   **Luz Artificial (Interior):**
+    *   **Tipo:** Point Light ou Area Light.
+    *   **Cor:** 4000K (Branco Neutro) para salas e 3000K (Branco Quente) para berçário.
+    *   **Intensidade:** Baixa a média (simula LEDs de 24W-32W).
+    *   **Sombra:** Soft Shadow (sombras suaves) para criar um ambiente acolhedor.
+
+*   **Ambiente Externo (HDRI):**
+    *   Use um HDRI de "Sunny Day" ou "Clear Sky" para iluminação global e reflexos realistas no piso e nos brinquedos.
+
+*   **Gravidade:**
+    *   Para objetos estáticos (mobiliário, estrutura): Gravidade padrão.
+    *   Para elementos de brinquedo (bolas, blocos): Adicione *Rigid Body Physics* no Blender para simular queda e colisão realista.
+
+---
+
+### **7. Resumo de Materiais para Texturas (Shader Nodes)**
+
+*   **Piso Cerâmico:** *Diffuse BSDF* com cor clara + *Normal Map* de azulejo + *Roughness* baixo (levemente brilhante).
+*   **Paredes Pintadas:** *Diffuse BSDF* com cor vibrante + *Roughness* alto (fosco).
+*   **Madeira (Mobiliário/Recicláveis):** *Diffuse BSDF* com cor marrom + *Bump Map* de veios de madeira.
+*   **Plástico (Mobiliário Infantil):** *Diffuse BSDF* com cor primária + *Roughness* médio + *Clearcoat* alto (brilho suave).
+*   **Pneu:** *Diffuse BSDF* preto + *Roughness* alto + *Normal Map* de textura de borracha.
+*   **Papelão:** *Diffuse BSDF* bege + *Bump Map* de fibra de papel + *Roughness* alto.
+
+Esta descrição fornece todas as dimensões, cores, materiais e contextos necessários para criar um CMEI realista e funcional no Blender, refletindo a arquitetura comum do Nordeste brasileiro.

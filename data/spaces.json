@@ -1,0 +1,17 @@
+{
+  "corridor": { "id": "FLOOR_CORRIDOR", "width": 1.8, "length": 36, "height": 2.8 },
+  "spaces": [
+    { "id": "SPC_CLASS_01", "x": [1, 8],  "y": [0.9, 7.9],  "type": "sala_atividades" },
+    { "id": "SPC_CLASS_02", "x": [8, 15], "y": [0.9, 7.9],  "type": "sala_atividades" },
+    { "id": "SPC_CLASS_03", "x": [15, 22],"y": [0.9, 7.9],  "type": "sala_atividades" },
+    { "id": "SPC_CLASS_04", "x": [22, 29],"y": [0.9, 7.9],  "type": "sala_atividades" },
+    { "id": "SPC_MULTI",    "x": [29, 37],"y": [0.9, 6.9],  "type": "sala_multiuso" },
+    { "id": "SPC_BERC_01",  "x": [1, 7],  "y": [-6.9, -0.9],"type": "bercario" },
+    { "id": "SPC_BERC_02",  "x": [7, 13], "y": [-6.9, -0.9],"type": "bercario" },
+    { "id": "SPC_WC_01",    "x": [13, 16],"y": [-3.4, -0.9],"type": "banheiro_infantil" },
+    { "id": "SPC_WC_02",    "x": [16, 19],"y": [-3.4, -0.9],"type": "banheiro_infantil" },
+    { "id": "SPC_KITCHEN",  "x": [19, 24],"y": [-4.9, -0.9],"type": "cozinha" },
+    { "id": "SPC_CAFE",     "x": [24, 32],"y": [-6.9, -0.9],"type": "refeitorio" }
+  ],
+  "patio": { "x": [2, 14], "y": [8.5, 14.5], "height": 3.5 }
+}

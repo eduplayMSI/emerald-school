@@ -1,0 +1,11 @@
+{
+  "note": "Doors são extraídas dinamicamente do GLB pelo prefixo DOOR_PIVOT_*. Este arquivo documenta a convenção de swing.",
+  "convention": {
+    "north_side": "portas em paredes com Z(glTF) < 0 → abertura +90° em Y",
+    "south_side": "portas em paredes com Z(glTF) > 0 → abertura -90° em Y",
+    "auto_open_distance_m": 2.6,
+    "anim_speed_per_s": 3.2,
+    "collider_disabled_when": "abertura > 0.5 ou distância < 3.0"
+  },
+  "expected_count": 11
+}

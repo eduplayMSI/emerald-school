@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMERALD-SCHOOL — CMEI Nordeste</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="hud">
+    <div id="crosshair"></div>
+    <div id="loading">
+      <h1>EMERALD-SCHOOL</h1>
+      <p>CMEI Nordeste — Experiência Demonstrativa</p>
+      <div id="progress-bar"><div id="progress-fill"></div></div>
+      <p id="progress-text">Carregando modelo 3D…</p>
+      <button id="start-btn" style="display:none;">INICIAR VISITA</button>
+    </div>
+    <div id="controls-info" style="display:none;">
+      <span><b>WASD</b> mover</span> ·
+      <span><b>Mouse</b> olhar</span> ·
+      <span><b>Shift</b> correr</span> ·
+      <span><b>Esc</b> liberar cursor</span>
+    </div>
+    <div id="error" style="display:none;"></div>
+  </div>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
