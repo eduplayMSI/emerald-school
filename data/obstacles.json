@@ -1,0 +1,37 @@
+{
+  "meta": {"modalidade": "CONCEPTUAL"},
+  "obstacles": [
+    {
+      "id":"OBSTACLE_001","nome":"Soleira da porta — Sala 01",
+      "categoria":"Soleira","coords":[4.5,0.03,-0.9],
+      "dimensoes":{"largura_m":0.90,"altura_m":0.02},
+      "rota":["ROUTE_002"],
+      "descricao":"Desnível de 0.02m entre FLOOR_CORRIDOR e FLOOR_SPC_CLASS_01.",
+      "condicao":"Adequado (abaixo de 2cm — não bloqueia cadeira de rodas, mas é obstáculo físico)",
+      "fonte":"Modelo P02/P03","estado_dado":"ESTIMATED"
+    },
+    {
+      "id":"OBSTACLE_002","nome":"Pilar Pórtico — Oeste",
+      "categoria":"Pilar","coords":[-0.3,1.8,2.2],
+      "dimensoes":{"largura_m":0.35,"profundidade_m":0.35,"altura_m":3.6},
+      "rota":["ROUTE_001"],
+      "descricao":"Pilar estrutural 0.35 x 0.35 x 3.6m.",
+      "condicao":"Adequado","fonte":"P02","estado_dado":"CONFIRMED"
+    },
+    {
+      "id":"OBSTACLE_003","nome":"Pilar Marquise — Sudoeste",
+      "categoria":"Pilar","coords":[-3.1,1.8,2.2],
+      "dimensoes":{"largura_m":0.35,"profundidade_m":0.35,"altura_m":3.6},
+      "rota":[],"descricao":"Pilar externo de suporte da marquise.","condicao":"Adequado",
+      "fonte":"P02","estado_dado":"CONFIRMED"
+    },
+    {
+      "id":"OBSTACLE_004","nome":"Pilar Pátio — Noroeste",
+      "categoria":"Pilar","coords":[2.2,1.75,-14.3],
+      "dimensoes":{"largura_m":0.20,"profundidade_m":0.20,"altura_m":3.5},
+      "rota":["ROUTE_007"],
+      "descricao":"Pilar de sustentação da cobertura do pátio.",
+      "condicao":"Adequado","fonte":"P02","estado_dado":"CONFIRMED"
+    }
+  ]
+}

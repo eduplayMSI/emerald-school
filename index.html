@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EMERALD-SCHOOL — CMEI Nordeste</title>
+  <title>EMERALD-SCHOOL — CMEI Nordeste · P03</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div id="hud">
     <div id="crosshair"></div>
+    <div id="hud-space"><em>—</em></div>
+
     <div id="loading">
       <h1>EMERALD-SCHOOL</h1>
-      <p>CMEI Nordeste — Experiência Demonstrativa</p>
+      <p>CMEI Nordeste · P03 · Acessibilidade</p>
       <div id="progress-bar"><div id="progress-fill"></div></div>
       <p id="progress-text">Carregando modelo 3D…</p>
       <button id="start-btn" style="display:none;">INICIAR VISITA</button>
     </div>
+
     <div id="controls-info" style="display:none;">
       <span><b>WASD</b> mover</span> ·
       <span><b>Mouse</b> olhar</span> ·
       <span><b>Shift</b> correr</span> ·
-      <span><b>Esc</b> liberar cursor</span>
+      <span><b>E</b> porta</span> ·
+      <span><b>Esc</b> cursor</span>
     </div>
+
+    <div id="mode-btn">● MODO EXPLORAÇÃO</div>
+
+    <div id="layer-panel"></div>
+
+    <div id="route-panel" style="display:none;"></div>
+    <div id="route-details" style="display:none;"></div>
+    <div id="marker-panel" style="display:none;"></div>
+
+    <div id="minimap"><canvas id="minimap-canvas"></canvas></div>
+
     <div id="error" style="display:none;"></div>
   </div>
   <script type="importmap">

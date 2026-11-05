@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "modalidade": "CONCEPTUAL",
+    "note": "Perigos identificados por análise geométrica — sem metodologia de gravidade normativa."
+  },
+  "hazards": [
+    {
+      "id":"HAZARD_001","nome":"Percurso sobre grama não pavimentada",
+      "categoria":"Piso","coords":[0,0.05,-4],
+      "severidade":"MODERATE",
+      "rota":["ROUTE_007"],
+      "descricao":"Segmento da Rota 007 atravessa SITE_TERRAIN (grama) sem pavimentação, entre x=0 e x=2, y=0 a y=8.5 (Blender). Em condições de chuva, torna-se escorregadio e inacessível.",
+      "mitigacao_possivel":"Adicionar caminho pavimentado externo ou ligação interna corredor-pátio.",
+      "fonte":"Auditoria P03","estado_dado":"ESTIMATED"
+    },
+    {
+      "id":"HAZARD_002","nome":"Transição calçada → piso interno",
+      "categoria":"Piso","coords":[-3.5,0.01,0],
+      "severidade":"LOW",
+      "rota":["ROUTE_001"],
+      "descricao":"Diferença de cota de aproximadamente 0.05m entre topo da calçada (z=-0.05 em Blender) e piso do corredor (z=0.00). Não há rampa explícita.",
+      "mitigacao_possivel":"Rampa de transição suave 1:12.",
+      "fonte":"Auditoria P03","estado_dado":"ESTIMATED"
+    },
+    {
+      "id":"HAZARD_003","nome":"Piso liso do WC quando molhado",
+      "categoria":"Piso","coords":[14.5,0.05,2.0],
+      "severidade":"LOW",
+      "rota":["ROUTE_004"],
+      "descricao":"Piso cerâmico do sanitário infantil (cor cinza) especificado no memorial como antiderrapante, mas em uso com água apresenta risco de escorregão.",
+      "mitigacao_possivel":"Tapete antiderrapante na entrada; ralo linear funcional.",
+      "fonte":"Auditoria P03","estado_dado":"ESTIMATED"
+    }
+  ]
+}

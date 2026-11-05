@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "modalidade": "CONCEPTUAL",
+    "coordinate_system": "Web/glTF (Y up)",
+    "note": "Marcadores apontam para posições físicas do modelo P03."
+  },
+  "markers": [
+    {
+      "id":"MARKER_001","nome":"Entrada Principal (Pórtico)",
+      "categoria":"Acesso","coords":[-0.3,2.0,0],
+      "ambiente":"Pórtico Oeste","rota":["ROUTE_001"],
+      "descricao":"Pórtico de entrada na fachada oeste, com 2 pilares + lintel + marquise.",
+      "condicao":"Adequado (vão de 4.4m entre pilares)",
+      "fonte":"Projeto P02 (extensão conceitual)","estado_dado":"INFERRED",
+      "observacao":"Passagem desobstruída no eixo do corredor."
+    },
+    {
+      "id":"MARKER_002","nome":"Porta — Sala de Atividades 01",
+      "categoria":"Porta","coords":[4.5,1.5,-0.9],
+      "ambiente":"SPC_CLASS_01","rota":["ROUTE_002"],
+      "descricao":"Porta de madeira 0.90 x 2.10m, folha única, pivô esquerdo, abertura automática via proximidade.",
+      "condicao":"Funcional","fonte":"P02/P03","estado_dado":"CONFIRMED",
+      "observacao":"Batente + soleira 0.02m. Ver OBSTACLE_001."
+    },
+    {
+      "id":"MARKER_003","nome":"Porta — Berçário 01",
+      "categoria":"Porta","coords":[4.0,1.5,0.9],
+      "ambiente":"SPC_BERC_01","rota":["ROUTE_003"],
+      "descricao":"Porta de madeira 0.90 x 2.10m, abertura automática.",
+      "condicao":"Funcional","fonte":"P02/P03","estado_dado":"CONFIRMED",
+      "observacao":"Lado norte (z positivo em Web)."
+    },
+    {
+      "id":"MARKER_004","nome":"Porta — Sanitário Infantil 01",
+      "categoria":"Porta","coords":[14.5,1.5,0.9],
+      "ambiente":"SPC_WC_01","rota":["ROUTE_004"],
+      "descricao":"Porta de madeira 0.90 x 2.10m, acesso ao banheiro infantil.",
+      "condicao":"Funcional","fonte":"P02/P03","estado_dado":"CONFIRMED",
+      "observacao":"Piso cerâmico do WC é liso quando molhado — ver HAZARD_003."
+    },
+    {
+      "id":"MARKER_005","nome":"Coluna do Pórtico — Leste",
+      "categoria":"Estrutura","coords":[-0.3,1.8,-2.2],
+      "ambiente":"Pórtico Oeste","rota":["ROUTE_001"],
+      "descricao":"Pilar 0.35 x 0.35m do pórtico de entrada. É também obstáculo físico.",
+      "condicao":"Adequado","fonte":"P02","estado_dado":"INFERRED",
+      "observacao":"Colisor ativo — não bloqueia passagem central."
+    },
+    {
+      "id":"MARKER_006","nome":"Piso do Corredor (amostra)",
+      "categoria":"Piso","coords":[19,0.05,0],
+      "ambiente":"FLOOR_CORRIDOR","rota":[],
+      "descricao":"Cerâmica antiderrapante 60x60cm, cor bege, conforme memorial.",
+      "condicao":"Adequado","fonte":"Memorial","estado_dado":"CONFIRMED",
+      "observacao":"Superfície uniforme; sinalização tátil ausente."
+    },
+    {
+      "id":"MARKER_007","nome":"Piso do Pátio Coberto (borracha)",
+      "categoria":"Piso","coords":[8,0.05,-11],
+      "ambiente":"FLOOR_PATIO","rota":["ROUTE_007","ROUTE_008"],
+      "descricao":"Borracha reciclada, cor vermelha, conforme memorial.",
+      "condicao":"Adequado","fonte":"Memorial","estado_dado":"CONFIRMED",
+      "observacao":"Transição de cerâmica (corredor) para grama (externo) é brusca — ver HAZARD_001."
+    },
+    {
+      "id":"MARKER_008","nome":"Transição Calçada → Grama (contorno oeste)",
+      "categoria":"Piso","coords":[0,0.05,0],
+      "ambiente":"SITE (contorno externo)","rota":["ROUTE_007"],
+      "descricao":"Ponto onde a calçada de entrada termina e o percurso passa a ser feito sobre grama não pavimentada.",
+      "condicao":"Irregular (não pavimentado)","fonte":"Observação P03","estado_dado":"ESTIMATED",
+      "observacao":"Limitação identificada na auditoria P03. Rota alternativa interna não existe no modelo P02."
+    }
+  ]
+}

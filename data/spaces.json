@@ -1,17 +1,28 @@
 {
-  "corridor": { "id": "FLOOR_CORRIDOR", "width": 1.8, "length": 36, "height": 2.8 },
+  "coordinate_system": "Web/glTF (Y up). Boxes: [xmin, zmin, xmax, zmax] em metros.",
+  "corridor": {
+    "id": "FLOOR_CORRIDOR",
+    "bbox": [1.0, -0.9, 37.0, 0.9],
+    "label": "Corredor Principal"
+  },
   "spaces": [
-    { "id": "SPC_CLASS_01", "x": [1, 8],  "y": [0.9, 7.9],  "type": "sala_atividades" },
-    { "id": "SPC_CLASS_02", "x": [8, 15], "y": [0.9, 7.9],  "type": "sala_atividades" },
-    { "id": "SPC_CLASS_03", "x": [15, 22],"y": [0.9, 7.9],  "type": "sala_atividades" },
-    { "id": "SPC_CLASS_04", "x": [22, 29],"y": [0.9, 7.9],  "type": "sala_atividades" },
-    { "id": "SPC_MULTI",    "x": [29, 37],"y": [0.9, 6.9],  "type": "sala_multiuso" },
-    { "id": "SPC_BERC_01",  "x": [1, 7],  "y": [-6.9, -0.9],"type": "bercario" },
-    { "id": "SPC_BERC_02",  "x": [7, 13], "y": [-6.9, -0.9],"type": "bercario" },
-    { "id": "SPC_WC_01",    "x": [13, 16],"y": [-3.4, -0.9],"type": "banheiro_infantil" },
-    { "id": "SPC_WC_02",    "x": [16, 19],"y": [-3.4, -0.9],"type": "banheiro_infantil" },
-    { "id": "SPC_KITCHEN",  "x": [19, 24],"y": [-4.9, -0.9],"type": "cozinha" },
-    { "id": "SPC_CAFE",     "x": [24, 32],"y": [-6.9, -0.9],"type": "refeitorio" }
+    {"id":"SPC_CLASS_01","label":"Sala de Atividades 01","type":"sala_atividades","bbox":[1.0,-7.9,8.0,-0.9]},
+    {"id":"SPC_CLASS_02","label":"Sala de Atividades 02","type":"sala_atividades","bbox":[8.0,-7.9,15.0,-0.9]},
+    {"id":"SPC_CLASS_03","label":"Sala de Atividades 03","type":"sala_atividades","bbox":[15.0,-7.9,22.0,-0.9]},
+    {"id":"SPC_CLASS_04","label":"Sala de Atividades 04","type":"sala_atividades","bbox":[22.0,-7.9,29.0,-0.9]},
+    {"id":"SPC_MULTI","label":"Sala de Multiuso / Biblioteca","type":"sala_multiuso","bbox":[29.0,-6.9,37.0,-0.9]},
+    {"id":"SPC_BERC_01","label":"Berçário 01","type":"bercario","bbox":[1.0,0.9,7.0,6.9]},
+    {"id":"SPC_BERC_02","label":"Berçário 02","type":"bercario","bbox":[7.0,0.9,13.0,6.9]},
+    {"id":"SPC_WC_01","label":"Sanitário Infantil 01","type":"banheiro_infantil","bbox":[13.0,0.9,16.0,3.4]},
+    {"id":"SPC_WC_02","label":"Sanitário Infantil 02","type":"banheiro_infantil","bbox":[16.0,0.9,19.0,3.4]},
+    {"id":"SPC_KITCHEN","label":"Cozinha","type":"cozinha","bbox":[19.0,0.9,24.0,4.9]},
+    {"id":"SPC_CAFE","label":"Refeitório","type":"refeitorio","bbox":[24.0,0.9,32.0,6.9]},
+    {"id":"FLOOR_PATIO","label":"Pátio Coberto","type":"patio_coberto","bbox":[2.0,-14.5,14.0,-8.5]},
+    {"id":"PLAY_SAND","label":"Playground — Tanque de Areia","type":"playground","bbox":[4.0,-20.0,12.0,-16.0]},
+    {"id":"SITE_ENTRY_W","label":"Calçada de Entrada","type":"exterior","bbox":[-8.0,-2.2,1.0,2.2]}
   ],
-  "patio": { "x": [2, 14], "y": [8.5, 14.5], "height": 3.5 }
+  "boundary": {
+    "label": "Área externa (grama)",
+    "note": "Fallback quando o jogador não está em nenhum espaço identificado."
+  }
 }

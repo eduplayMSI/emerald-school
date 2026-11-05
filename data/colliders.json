@@ -1,12 +1,17 @@
 {
-  "note": "Colisores são extraídos do GLB por prefixo COLLIDER_. Este arquivo documenta a convenção.",
+  "note": "Colisores extraídos do GLB por prefixo COLLIDER_. Blender P03 exclui esferas de marcador do GLB — colisores de arquitetura permanecem.",
   "prefix": "COLLIDER_",
   "kinds": {
     "wall_segment": "COLLIDER_WALL_*",
-    "window_opening": "COLLIDER_WALL_*_WIN* (bloqueia a janela por completo)",
-    "door_leaf": "COLLIDER_DOOR_* (desativado dinamicamente quando a porta abre)",
-    "column": "COLLIDER_COL_*"
+    "window_opening": "COLLIDER_WALL_*_WIN*",
+    "door_leaf": "COLLIDER_DOOR_* (desativado dinamicamente)",
+    "column": "COLLIDER_COL_*",
+    "playground": "COLLIDER_PLAY_*"
   },
   "player_radius_m": 0.28,
-  "player_eye_height_m": 1.7
+  "player_eye_height_m": 1.7,
+  "door_matching": {
+    "primary": "mesh.userData.emerald_door_id",
+    "fallback": "mesh.name === 'COLLIDER_DOOR_' + doorId"
+  }
 }

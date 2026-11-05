@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "modalidade": "CONCEPTUAL",
+    "referencia": "Rotas demonstrativas propostas; escola conceitual (sem projeto executivo). Analogia estrutural a Corrêa (Parte A — rotas).",
+    "coordinate_system": "Web/glTF (Y up). Conversão de Blender: (bx,by,bz) -> (bx,bz,-by).",
+    "note": "Rotas 2-6 começam no eixo do corredor e terminam no centro do ambiente. Rotas 1 e 7 usam a extremidade oeste. Rota 7 documenta barreira real (grama não pavimentada)."
+  },
+  "routes": [
+    {
+      "id": "ROUTE_001",
+      "titulo": "Entrada principal ao corredor",
+      "origem": "Calçada oeste",
+      "destino": "Corredor central",
+      "objetivo": "Acesso inicial pela fachada oeste, sob pórtico",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_001_1","from":[-3.5,0.03,0],"to":[-0.3,0.03,0],
+         "floor":"SITE_ENTRY_W (cerâmica clara)","width_m":4.4,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_001_2","from":[-0.3,0.03,0],"to":[0.5,0.02,0],
+         "floor":"SITE_ENTRY_W -> FLOOR_CORRIDOR","width_m":4.4,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_001_3","from":[0.5,0.02,0],"to":[5.0,0.02,0],
+         "floor":"FLOOR_CORRIDOR (cerâmica bege)","width_m":1.8,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[-3.5,0.03,0],[-0.3,0.03,0],[0.5,0.02,0],[5.0,0.02,0]],
+      "ambientes":["SITE_ENTRY_W","FLOOR_CORRIDOR"],
+      "markers_related":["MARKER_001","MARKER_005"],
+      "hazards_related":["HAZARD_002"]
+    },
+    {
+      "id": "ROUTE_002",
+      "titulo": "Corredor à Sala de Atividades 01",
+      "origem": "Corredor central",
+      "destino": "SPC_CLASS_01",
+      "objetivo": "Acesso à sala de referência",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_002_1","from":[4.5,0.02,0],"to":[4.5,0.02,-0.9],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_002_2","from":[4.5,0.02,-0.9],"to":[4.5,0.02,-3.0],
+         "floor":"Soleira + FLOOR_SPC_CLASS_01","width_m":0.9,"obstacles":["OBSTACLE_001"],"hazards":[]}
+      ],
+      "waypoints":[[4.5,0.02,0],[4.5,0.02,-0.9],[4.5,0.02,-3.0]],
+      "ambientes":["FLOOR_CORRIDOR","SPC_CLASS_01"],
+      "markers_related":["MARKER_002"],
+      "hazards_related":[]
+    },
+    {
+      "id": "ROUTE_003",
+      "titulo": "Corredor ao Berçário 01",
+      "origem": "Corredor central",
+      "destino": "SPC_BERC_01",
+      "objetivo": "Acesso ao berçário",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_003_1","from":[4.0,0.02,0],"to":[4.0,0.02,0.9],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_003_2","from":[4.0,0.02,0.9],"to":[4.0,0.02,3.0],
+         "floor":"Soleira + FLOOR_SPC_BERC_01","width_m":0.9,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[4.0,0.02,0],[4.0,0.02,0.9],[4.0,0.02,3.0]],
+      "ambientes":["FLOOR_CORRIDOR","SPC_BERC_01"],
+      "markers_related":["MARKER_003"],
+      "hazards_related":[]
+    },
+    {
+      "id": "ROUTE_004",
+      "titulo": "Corredor ao Sanitário Infantil 01",
+      "origem": "Corredor central",
+      "destino": "SPC_WC_01",
+      "objetivo": "Acesso ao banheiro infantil",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_004_1","from":[14.5,0.02,0],"to":[14.5,0.02,0.9],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_004_2","from":[14.5,0.02,0.9],"to":[14.5,0.02,2.0],
+         "floor":"Soleira + FLOOR_SPC_WC_01","width_m":0.9,"obstacles":[],"hazards":["HAZARD_003"]}
+      ],
+      "waypoints":[[14.5,0.02,0],[14.5,0.02,0.9],[14.5,0.02,2.0]],
+      "ambientes":["FLOOR_CORRIDOR","SPC_WC_01"],
+      "markers_related":["MARKER_004"],
+      "hazards_related":["HAZARD_003"]
+    },
+    {
+      "id": "ROUTE_005",
+      "titulo": "Corredor ao Refeitório",
+      "origem": "Corredor central",
+      "destino": "SPC_CAFE",
+      "objetivo": "Acesso ao refeitório",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_005_1","from":[28,0.02,0],"to":[28,0.02,0.9],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_005_2","from":[28,0.02,0.9],"to":[28,0.02,3.0],
+         "floor":"Soleira + FLOOR_SPC_CAFE","width_m":0.9,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[28,0.02,0],[28,0.02,0.9],[28,0.02,3.0]],
+      "ambientes":["FLOOR_CORRIDOR","SPC_CAFE"],
+      "markers_related":[],
+      "hazards_related":[]
+    },
+    {
+      "id": "ROUTE_006",
+      "titulo": "Corredor à Cozinha",
+      "origem": "Corredor central",
+      "destino": "SPC_KITCHEN",
+      "objetivo": "Acesso de serviço (restrito a adultos)",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_006_1","from":[21.5,0.02,0],"to":[21.5,0.02,0.9],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_006_2","from":[21.5,0.02,0.9],"to":[21.5,0.02,3.0],
+         "floor":"Soleira + FLOOR_SPC_KITCHEN","width_m":0.9,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[21.5,0.02,0],[21.5,0.02,0.9],[21.5,0.02,3.0]],
+      "ambientes":["FLOOR_CORRIDOR","SPC_KITCHEN"],
+      "markers_related":[],
+      "hazards_related":[]
+    },
+    {
+      "id": "ROUTE_007",
+      "titulo": "Corredor ao Pátio Coberto (via contorno externo)",
+      "origem": "Corredor central",
+      "destino": "FLOOR_PATIO",
+      "objetivo": "Acesso ao pátio coberto — depende de contorno externo sobre grama",
+      "modalidade": "CONCEPTUAL",
+      "estado": "INTERRUPTED (barreira: falta de ligação direta interna; contorno por grama não pavimentada)",
+      "segments": [
+        {"id":"SEGMENT_007_1","from":[5,0.02,0],"to":[1,0.02,0],
+         "floor":"FLOOR_CORRIDOR","width_m":1.8,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_007_2","from":[1,0.02,0],"to":[0,0.02,0],
+         "floor":"Limite da calçada / solo","width_m":1.0,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_007_3","from":[0,0.02,0],"to":[0,0.02,-5],
+         "floor":"SITE_TERRAIN (grama) — NÃO PAVIMENTADO","width_m":1.0,
+         "obstacles":[],"hazards":["HAZARD_001"]},
+        {"id":"SEGMENT_007_4","from":[0,0.02,-5],"to":[0,0.02,-8.5],
+         "floor":"SITE_TERRAIN (grama)","width_m":1.0,"obstacles":[],"hazards":["HAZARD_001"]},
+        {"id":"SEGMENT_007_5","from":[0,0.02,-8.5],"to":[2,0.02,-8.5],
+         "floor":"SITE_TERRAIN -> FLOOR_PATIO","width_m":1.0,"obstacles":["OBSTACLE_004"],"hazards":[]},
+        {"id":"SEGMENT_007_6","from":[2,0.02,-8.5],"to":[8,0.02,-11],
+         "floor":"FLOOR_PATIO (borracha)","width_m":4.0,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[5,0.02,0],[1,0.02,0],[0,0.02,0],[0,0.02,-5],[0,0.02,-8.5],[2,0.02,-8.5],[8,0.02,-11]],
+      "ambientes":["FLOOR_CORRIDOR","SITE_TERRAIN","FLOOR_PATIO"],
+      "markers_related":["MARKER_007","MARKER_008"],
+      "hazards_related":["HAZARD_001"]
+    },
+    {
+      "id": "ROUTE_008",
+      "titulo": "Pátio Coberto ao Playground Descoberto",
+      "origem": "FLOOR_PATIO",
+      "destino": "PLAY_SAND (tanque de areia)",
+      "objetivo": "Acesso às áreas de brincar ao ar livre",
+      "modalidade": "CONCEPTUAL",
+      "estado": "OK",
+      "segments": [
+        {"id":"SEGMENT_008_1","from":[8,0.02,-11],"to":[8,0.02,-14],
+         "floor":"FLOOR_PATIO (borracha)","width_m":4.0,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_008_2","from":[8,0.02,-14],"to":[8,0.02,-16],
+         "floor":"SITE_TERRAIN (grama)","width_m":2.0,"obstacles":[],"hazards":[]},
+        {"id":"SEGMENT_008_3","from":[8,0.02,-16],"to":[8,0.02,-18],
+         "floor":"PLAY_SAND (areia)","width_m":2.0,"obstacles":[],"hazards":[]}
+      ],
+      "waypoints":[[8,0.02,-11],[8,0.02,-14],[8,0.02,-16],[8,0.02,-18]],
+      "ambientes":["FLOOR_PATIO","SITE_TERRAIN","PLAY_SAND"],
+      "markers_related":["MARKER_007"],
+      "hazards_related":[]
+    }
+  ]
+}
