@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "stage": "P15",
+  "units": "meters",
+  "items": [
+    {
+      "id": "PLAY_SEESAW_01",
+      "name": "Gangorra",
+      "category": "playground_equipment",
+      "space_id": "PLAY_SAND",
+      "dimensions": { "width": 0.3, "depth": 2.5, "height": 0.8 },
+      "safety_pad": "PLAY_RUBBER_PAD_01"
+    },
+    {
+      "id": "PLAY_PLAYHOUSE_01",
+      "name": "Casinha de Brincar",
+      "category": "playground_equipment",
+      "space_id": "PLAY_SAND",
+      "dimensions": { "width": 1.6, "depth": 1.6, "height": 1.6 }
+    },
+    {
+      "id": "PLAY_TUNNEL_01",
+      "name": "Túnel de Concreto",
+      "category": "playground_equipment",
+      "space_id": "PLAY_SAND",
+      "dimensions": { "width": 1.2, "depth": 1.2, "height": 0.8 }
+    },
+    {
+      "id": "PLAY_SENSORY_01",
+      "name": "Painel Sensorial",
+      "category": "playground_equipment",
+      "space_id": "PLAY_SAND",
+      "dimensions": { "width": 0.8, "depth": 0.1, "height": 1.2 }
+    }
+  ]
+}

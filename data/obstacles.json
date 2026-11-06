@@ -32,6 +32,22 @@
       "rota":["ROUTE_007"],
       "descricao":"Pilar de sustentação da cobertura do pátio.",
       "condicao":"Adequado","fonte":"P02","estado_dado":"CONFIRMED"
+    },
+        {
+      "id":"OBSTACLE_005","nome":"Gangorra (Base)","categoria":"Brinquedo",
+      "coords":[8.0, 0.25, -17.0],
+      "dimensoes":{"largura_m":0.3,"profundidade_m":0.3,"altura_m":0.5},
+      "rota":["ROUTE_008"],
+      "descricao":"Base da gangorra no parque infantil.",
+      "condicao":"Adequado","fonte":"P15","estado_dado":"ESTIMATED"
+    },
+    {
+      "id":"OBSTACLE_006","nome":"Casinha de Brincar (Paredes)","categoria":"Brinquedo",
+      "coords":[8.0, 0.75, -19.5],
+      "dimensoes":{"largura_m":1.6,"profundidade_m":1.6,"altura_m":1.4},
+      "rota":["ROUTE_008"],
+      "descricao":"Estrutura da casinha de brincar.",
+      "condicao":"Adequado","fonte":"P15","estado_dado":"ESTIMATED"
     }
   ]
 }

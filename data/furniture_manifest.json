@@ -1,10 +1,16 @@
 {
-  "version": "1.0.0",
-  "stage": "P08",
+  "version": "1.2.0",
+  "stage": "P14",
   "units": "meters",
   "items": [
+    { "id": "FURN_KITCHEN_UPPER_CAB_1", "name": "Armário Aéreo", "category": "storage", "space_id": "SPC_KITCHEN" },
+    { "id": "FURN_KITCHEN_PREP_TABLE", "name": "Mesa de Preparo Inox", "category": "service", "space_id": "SPC_KITCHEN" },
+    { "id": "FURN_KITCHEN_SHELF", "name": "Estante de Metal", "category": "storage", "space_id": "SPC_KITCHEN" },
+    { "id": "FURN_CAFE_SERVING_COUNTER", "name": "Balcão de Distribuição", "category": "service", "space_id": "SPC_CAFE" },
+    { "id": "FURN_CAFE_CHAIR_1", "name": "Cadeira Infantil", "category": "seating", "space_id": "SPC_CAFE" },
+    { "id": "FURN_MULTI_CABINET", "name": "Armário de Apoio", "category": "storage", "space_id": "SPC_MULTI" },
     {
-      "id": "FURN_CLASS_TABLE_001",
+      "id": "FURN_CLASS01_TABLE_001",
       "name": "Mesa infantil coletiva",
       "category": "table",
       "space_id": "SPC_CLASS_01",
@@ -13,29 +19,65 @@
       "material_id": "EM_M_door_wood"
     },
     {
-      "id": "FURN_CLASS_CHAIR_001",
-      "name": "Cadeira infantil",
-      "category": "chair",
+      "id": "FURN_CLASS01_PANEL",
+      "name": "Painel Pedagógico",
+      "category": "pedagogical",
       "space_id": "SPC_CLASS_01",
-      "dimensions": { "width": 0.35, "depth": 0.35, "height": 0.5 },
+      "dimensions": { "width": 3.0, "depth": 0.05, "height": 1.5 },
+      "source_status": "ESTIMATED",
+      "material_id": "EM_M_playground_equipment"
+    },
+    {
+      "id": "FURN_CLASS01_RUG",
+      "name": "Tapete de Leitura",
+      "category": "pedagogical",
+      "space_id": "SPC_CLASS_01",
+      "dimensions": { "width": 2.5, "depth": 2.0, "height": 0.02 },
+      "source_status": "ESTIMATED",
+      "material_id": "EM_M_floor_ceramic_cafe"
+    },
+    {
+      "id": "FURN_CLASS01_CUBBY",
+      "name": "Armário Escaninho",
+      "category": "storage",
+      "space_id": "SPC_CLASS_01",
+      "dimensions": { "width": 1.2, "depth": 0.4, "height": 1.0 },
       "source_status": "ESTIMATED",
       "material_id": "EM_M_door_wood"
     },
     {
-      "id": "FURN_BERC_CRIB_001",
-      "name": "Berço padrão",
-      "category": "crib",
+      "id": "FURN_BERC01_CHANGER",
+      "name": "Trocador de Fraldas",
+      "category": "care",
       "space_id": "SPC_BERC_01",
-      "dimensions": { "width": 1.3, "depth": 0.7, "height": 0.85 },
+      "dimensions": { "width": 1.2, "depth": 0.6, "height": 0.8 },
       "source_status": "ESTIMATED",
       "material_id": "EM_M_door_wood"
     },
     {
-      "id": "FURN_CAFE_TABLE_001",
-      "name": "Mesa de refeitório",
-      "category": "table",
-      "space_id": "SPC_CAFE",
-      "dimensions": { "width": 2.4, "depth": 0.8, "height": 0.55 },
+      "id": "FURN_BERC01_ARMCHAIR",
+      "name": "Poltrona de Amamentação",
+      "category": "care",
+      "space_id": "SPC_BERC_01",
+      "dimensions": { "width": 0.8, "depth": 0.8, "height": 0.8 },
+      "source_status": "ESTIMATED",
+      "material_id": "EM_M_wall_sun_yellow"
+    },
+    {
+      "id": "FURN_BERC01_RUG",
+      "name": "Tapete de Estimulação",
+      "category": "pedagogical",
+      "space_id": "SPC_BERC_01",
+      "dimensions": { "width": 2.0, "depth": 2.0, "height": 0.02 },
+      "source_status": "ESTIMATED",
+      "material_id": "EM_M_floor_ceramic_cafe"
+    },
+    {
+      "id": "FURN_MULTI_DISPLAY_01",
+      "name": "Expositor de Livros",
+      "category": "storage",
+      "space_id": "SPC_MULTI",
+      "dimensions": { "width": 1.0, "depth": 0.4, "height": 0.9 },
       "source_status": "ESTIMATED",
       "material_id": "EM_M_door_wood"
     }
