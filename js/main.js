@@ -1,5 +1,7 @@
-import * as THREE from 'three'; // Importação essencial
+import * as THREE from 'three';
 import { initScene, loadModel, addToScene, startRenderLoop, bindResize, getCamera, getScene } from './scene.js';
+import { NPCManager } from './npc/NPCManager.js';
+import { initLighting } from './lighting.js';
 import { initPlayer, updatePlayer, resetPosition } from './player.js';
 import { initCollision, addCollidersFromModel, resolveCollisions } from './collision.js';
 import { initDoors, updateDoors } from './doors.js';
@@ -18,17 +20,17 @@ async function bootstrap() {
     initPlayer();
     initCollision();
 
-    // Cache-buster ?v=10 para forçar o navegador a baixar o novo código
-    const model = await loadModel('./assets/EMERALD_SCHOOL.glb?v=10', setProgress);
+    // Cache-buster ?v=11
+// js/main.js
+const model = await loadModel('./assets/EMERALD_SCHOOL.glb?v=14', setProgress);
     addToScene(model);
     window.__emerald_model = model;
 
-    console.group("[EMERALD] Correção de Normais (Piso)");
+    console.group("[EMERALD] Auditoria de Materiais (P19)");
     model.traverse(child => {
         if (child.isMesh && child.name.toLowerCase().includes('floor')) {
-            // Força a renderização frente e verso para consertar normais invertidas
-            child.material.side = THREE.DoubleSide;
-            console.log(`Objeto: ${child.name} | Material: ${child.material.name} | DoubleSide: ATIVADO`);
+            const matName = child.material.name || "Sem Nome";
+            console.log(`Objeto: ${child.name} | Material: ${matName}`);
         }
     });
     console.groupEnd();
@@ -37,6 +39,11 @@ async function bootstrap() {
     addCollidersFromModel(model);
     initDoors(model);
 
+    await initLighting(getScene());
+    
+    const npcManager = new NPCManager(getScene());
+    await npcManager.init();
+    
     await initRoutes(getScene());
     await initMarkers(getScene());
     await initHUD();
@@ -62,7 +69,11 @@ async function bootstrap() {
       last = now;
       updatePlayer(dt);
       resolveCollisions();
-      updateDoors(dt);
+      npcManager.update(dt);
+      
+      // Coleta posições dos NPCs para as portas
+      const npcPositions = npcManager.npcs.map(n => n.model.position);
+      updateDoors(dt, npcPositions);
       updateHUD();
       drawMinimap(getActiveRouteId());
       startRenderLoop();

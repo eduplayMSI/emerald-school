@@ -45,7 +45,21 @@ export function initPlayer() {
   });
 
   document.addEventListener('click', () => {
-    if (!locked) document.body.requestPointerLock();
+    // Só tenta capturar o mouse se não estiver capturado
+    if (!locked && document.pointerLockElement === null) {
+      try {
+        const promise = document.body.requestPointerLock();
+        if (promise && promise.catch) {
+          promise.catch(err => {
+            // Silencia o erro se o usuário clicar rápido demais
+            console.warn("[EMERALD] Pointer Lock bloqueado temporariamente pelo navegador:", err.message);
+          });
+        }
+      } catch (err) {
+        // Fallback para navegadores antigos que não retornam Promise
+        console.warn("[EMERALD] Pointer Lock falhou:", err.message);
+      }
+    }
   });
 
   document.addEventListener('keydown', e => {

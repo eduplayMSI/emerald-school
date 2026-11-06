@@ -8,7 +8,8 @@ export function initScene() {
   scene.background = new THREE.Color(0x9cc8e4);
   scene.fog = new THREE.Fog(0x9cc8e4, 60, 220);
 
-  camera = new THREE.PerspectiveCamera(72, window.innerWidth / window.innerHeight, 0.1, 500);
+  // P19: near aumentado para 0.2 e far reduzido para 250 (melhora o Depth Buffer)
+  camera = new THREE.PerspectiveCamera(72, window.innerWidth / window.innerHeight, 0.2, 250);
   camera.position.set(-4, 1.7, 0);
   camera.rotation.order = 'YXZ';
 
@@ -19,14 +20,12 @@ export function initScene() {
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   
-  // P10: Tone mapping para evitar cores estouradas
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 0.85;
   
   document.body.appendChild(renderer.domElement);
 
-  // 1. Sol (Sombras nítidas)
-  const sun = new THREE.DirectionalLight(0xFFFAED, 2.5);
+  const sun = new THREE.DirectionalLight(0xFFFAED, 2.0);
   sun.position.set(45, 80, 20);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
@@ -39,16 +38,13 @@ export function initScene() {
   sun.shadow.bias = -0.0005;
   scene.add(sun);
 
-  // 2. Luz Hemisférica NEUTRA (Céu branco, Chão cinza)
-  // Isso impede que a luz azul pinte as paredes amarelas de verde.
-  const hemi = new THREE.HemisphereLight(0xffffff, 0xcccccc, 0.7);
+  // Reduzido para permitir que as luzes internas do P21 apareçam
+  const hemi = new THREE.HemisphereLight(0xffffff, 0xcccccc, 0.35);
   scene.add(hemi);
 
-  // 3. Luz Ambiente para interiores
-  const amb = new THREE.AmbientLight(0xffffff, 0.4);
+  const amb = new THREE.AmbientLight(0xffffff, 0.15);
   scene.add(amb);
 
-  // Chão de fallback
   const groundMat = new THREE.MeshStandardMaterial({ color: 0x6e8b4a, roughness: 0.95 });
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), groundMat);
   ground.rotation.x = -Math.PI / 2;

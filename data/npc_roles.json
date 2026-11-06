@@ -1,0 +1,88 @@
+{
+  "roles": {
+    "child": {
+      "displayName": "Criança",
+      "scale": 0.65,
+      "speed": 1.6,
+      "runSpeed": 3.2,
+      "allowedZones": ["corridor", "classroom", "playground", "fountain", "cafeteria"],
+      "forbiddenZones": ["kitchen", "restricted"],
+      "activityPool": {
+        "corridor":   ["walk"],
+        "classroom":  ["walk", "idle"],
+        "playground": ["walk", "run", "idle"],
+        "fountain":   ["drink"],
+        "cafeteria":  ["sit"]
+      },
+      "preferredZones": ["playground", "classroom", "corridor"],
+      "idleTime": [1.5, 4.0],
+      "activityTime": [2.0, 6.0]
+    },
+    "teacher": {
+      "displayName": "Professor(a)",
+      "scale": 1.0,
+      "speed": 1.0,
+      "runSpeed": 1.4,
+      "allowedZones": ["corridor", "classroom", "playground", "cafeteria", "fountain"],
+      "forbiddenZones": ["kitchen", "restricted"],
+      "activityPool": {
+        "corridor":   ["walk", "supervise"],
+        "classroom":  ["walk", "idle", "supervise"],
+        "playground": ["supervise", "walk"],
+        "cafeteria":  ["sit", "talk", "idle"],
+        "fountain":   ["walk"]
+      },
+      "preferredZones": ["classroom", "corridor"],
+      "idleTime": [3.0, 7.0],
+      "activityTime": [5.0, 12.0]
+    },
+    "aide": {
+      "displayName": "Auxiliar",
+      "scale": 0.95,
+      "speed": 1.0,
+      "runSpeed": 1.4,
+      "allowedZones": ["corridor", "classroom", "playground", "cafeteria", "fountain"],
+      "forbiddenZones": ["kitchen", "restricted"],
+      "activityPool": {
+        "corridor":   ["walk"],
+        "classroom":  ["idle", "supervise"],
+        "playground": ["supervise", "walk", "idle"],
+        "cafeteria":  ["sit", "walk"],
+        "fountain":   ["walk"]
+      },
+      "preferredZones": ["playground", "corridor"],
+      "idleTime": [3.0, 6.0],
+      "activityTime": [4.0, 10.0]
+    },
+    "cook": {
+      "displayName": "Cozinheiro(a)",
+      "scale": 0.95,
+      "speed": 0.9,
+      "runSpeed": 1.2,
+      "allowedZones": ["kitchen", "cafeteria"],
+      "forbiddenZones": ["classroom", "playground", "corridor", "restricted"],
+      "activityPool": {
+        "kitchen":   ["work", "idle", "walk"],
+        "cafeteria": ["serve", "walk"]
+      },
+      "preferredZones": ["kitchen"],
+      "idleTime": [4.0, 8.0],
+      "activityTime": [8.0, 18.0]
+    },
+    "playground_supervisor": {
+      "displayName": "Supervisor(a) do Parque",
+      "scale": 1.0,
+      "speed": 0.9,
+      "runSpeed": 1.3,
+      "allowedZones": ["playground", "corridor"],
+      "forbiddenZones": ["kitchen", "restricted", "classroom", "cafeteria", "fountain"],
+      "activityPool": {
+        "playground": ["supervise", "idle", "walk"],
+        "corridor":   ["walk", "supervise"]
+      },
+      "preferredZones": ["playground"],
+      "idleTime": [5.0, 9.0],
+      "activityTime": [6.0, 12.0]
+    }
+  }
+}

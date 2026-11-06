@@ -59,28 +59,33 @@ export function initDoors(model) {
   });
 }
 
-export function updateDoors(dt) {
+// Recebe um array de posições (jogador + npcs)
+export function updateDoors(dt, additionalPositions = []) {
   if (doors.length === 0) return;
   const pos = getPlayerPos();
+  const allPositions = [pos, ...additionalPositions];
 
   for (const d of doors) {
     const wp = new THREE.Vector3();
     d.pivot.getWorldPosition(wp);
-    const dist = Math.hypot(pos.x - wp.x, pos.z - wp.z);
+    
+    let minDist = Infinity;
+    // Verifica se qualquer um (jogador ou NPC) está perto
+    for (const p of allPositions) {
+        const dist = Math.hypot(p.x - wp.x, p.z - wp.z);
+        if (dist < minDist) minDist = dist;
+    }
 
-    const target = dist < OPEN_DIST ? 1 : 0;
+    const target = minDist < OPEN_DIST ? 1 : 0;
     if (d.current < target) d.current = Math.min(1, d.current + ANIM_SPEED * dt);
     else if (d.current > target) d.current = Math.max(0, d.current - ANIM_SPEED * dt);
 
     d.pivot.rotation.y = d.closedAngle + d.current * (d.openAngle - d.closedAngle);
 
-    const shouldDisable = d.current > 0.5 || dist < OPEN_DIST + 0.4;
+    const shouldDisable = d.current > 0.5 || minDist < OPEN_DIST + 0.4;
     if (shouldDisable !== d.colliderDisabled) {
       d.colliderDisabled = shouldDisable;
       const hits = setDoorColliderDisabled(d.doorId, shouldDisable);
-      if (shouldDisable && hits === 0) {
-        console.warn(`[EMERALD][doors] "${d.doorId}" abriu mas colisor não foi achado.`);
-      }
     }
   }
 }

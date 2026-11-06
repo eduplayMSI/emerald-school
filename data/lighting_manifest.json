@@ -1,19 +1,30 @@
 {
-  "version": "1.0.0",
-  "stage": "P09",
-  "sun": {
-    "intensity": 4.5,
-    "color_hex": "#FFF2D9",
-    "angle_degrees": 50,
-    "shadows": "soft"
-  },
-  "interior_lights": {
-    "type": "point",
-    "intensity": 150,
-    "count": 8
-  },
-  "webgl_rendering": {
-    "tone_mapping": "ACESFilmicToneMapping",
-    "exposure": 1.1
-  }
+  "lights": [
+    { "id": "LIGHT_CORR_01", "type": "point", "pos": [3, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_02", "type": "point", "pos": [8, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_03", "type": "point", "pos": [13, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_04", "type": "point", "pos": [18, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_05", "type": "point", "pos": [23, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_06", "type": "point", "pos": [28, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CORR_07", "type": "point", "pos": [33, 2.75, 0], "color": "#FFF2D9", "intensity": 15, "distance": 6.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_CLASS_01", "type": "area", "pos": [4.5, 2.9, -4.4], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CLASS_02", "type": "area", "pos": [11.5, 2.9, -4.4], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CLASS_03", "type": "area", "pos": [18.5, 2.9, -4.4], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CLASS_04", "type": "area", "pos": [25.5, 2.9, -4.4], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_BERC_01", "type": "area", "pos": [4.0, 2.9, 3.9], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_BERC_02", "type": "area", "pos": [10.0, 2.9, 3.9], "color": "#FFF2D9", "intensity": 8, "distance": 5.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_MULTI_01", "type": "area", "pos": [33.0, 2.9, 3.9], "color": "#FFF2D9", "intensity": 10, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CAFE_01", "type": "area", "pos": [26.0, 2.9, 3.9], "color": "#FFF2D9", "intensity": 10, "distance": 5.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_CAFE_02", "type": "area", "pos": [29.0, 2.9, 3.9], "color": "#FFF2D9", "intensity": 10, "distance": 5.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_KITCHEN_01", "type": "area", "pos": [21.5, 2.9, 2.9], "color": "#FFF2D9", "intensity": 8, "distance": 4.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_WC_01", "type": "point", "pos": [14.5, 2.7, 2.1], "color": "#FFF2D9", "intensity": 10, "distance": 3.0, "castShadow": false, "category": "internal" },
+    { "id": "LIGHT_WC_02", "type": "point", "pos": [17.5, 2.7, 2.1], "color": "#FFF2D9", "intensity": 10, "distance": 3.0, "castShadow": false, "category": "internal" },
+    
+    { "id": "LIGHT_PATIO_01", "type": "area", "pos": [8.0, 3.4, -11.5], "color": "#FFF2D9", "intensity": 0, "distance": 6.0, "castShadow": false, "category": "external" }
+  ]
 }

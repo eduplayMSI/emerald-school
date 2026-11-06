@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    { "id": "NODE_HALL_01", "pos": [3, 0, 0], "zone": "corridor" },
+    { "id": "NODE_HALL_02", "pos": [8, 0, 0], "zone": "corridor" },
+    { "id": "NODE_HALL_03", "pos": [14, 0, 0], "zone": "corridor" },
+    { "id": "NODE_HALL_04", "pos": [20, 0, 0], "zone": "corridor" },
+    { "id": "NODE_HALL_05", "pos": [28, 0, 0], "zone": "corridor" },
+    { "id": "NODE_HALL_06", "pos": [33, 0, 0], "zone": "corridor" },
+
+    { "id": "NODE_FOUNTAIN", "pos": [10, 0, 0.6], "zone": "fountain" },
+
+    { "id": "NODE_ROOM_01", "pos": [4.5, 0, -3.0], "zone": "classroom" },
+    { "id": "NODE_ROOM_02", "pos": [11.5, 0, -3.0], "zone": "classroom" },
+    { "id": "NODE_ROOM_03", "pos": [18.5, 0, -3.0], "zone": "classroom" },
+    { "id": "NODE_ROOM_04", "pos": [25.5, 0, -3.0], "zone": "classroom" },
+    { "id": "NODE_BERC_01", "pos": [4.0, 0, 3.0], "zone": "classroom" },
+    { "id": "NODE_BERC_02", "pos": [10.0, 0, 3.0], "zone": "classroom" },
+    { "id": "NODE_MULTI",   "pos": [33.0, 0, 3.0], "zone": "classroom" },
+
+    { "id": "NODE_CAFE_01", "pos": [26.0, 0, 3.9], "zone": "cafeteria" },
+    { "id": "NODE_CAFE_02", "pos": [30.0, 0, 3.9], "zone": "cafeteria" },
+
+    { "id": "NODE_KITCHEN_01", "pos": [20.0, 0, 2.5], "zone": "kitchen" },
+    { "id": "NODE_KITCHEN_02", "pos": [21.5, 0, 3.5], "zone": "kitchen" },
+    { "id": "NODE_KITCHEN_03", "pos": [23.0, 0, 2.5], "zone": "kitchen" },
+
+    { "id": "NODE_PATIO",        "pos": [8, 0, -11], "zone": "playground" },
+    { "id": "NODE_PLAYGROUND_01","pos": [5, 0, -17], "zone": "playground" },
+    { "id": "NODE_PLAYGROUND_02","pos": [8, 0, -18], "zone": "playground" },
+    { "id": "NODE_PLAYGROUND_03","pos": [11, 0, -17], "zone": "playground" }
+  ],
+  "edges": [
+    { "from": "NODE_HALL_01", "to": "NODE_HALL_02", "type": "corridor" },
+    { "from": "NODE_HALL_02", "to": "NODE_HALL_03", "type": "corridor" },
+    { "from": "NODE_HALL_03", "to": "NODE_HALL_04", "type": "corridor" },
+    { "from": "NODE_HALL_04", "to": "NODE_HALL_05", "type": "corridor" },
+    { "from": "NODE_HALL_05", "to": "NODE_HALL_06", "type": "corridor" },
+
+    { "from": "NODE_HALL_02", "to": "NODE_ROOM_01", "type": "door" },
+    { "from": "NODE_HALL_03", "to": "NODE_ROOM_02", "type": "door" },
+    { "from": "NODE_HALL_04", "to": "NODE_ROOM_03", "type": "door" },
+    { "from": "NODE_HALL_05", "to": "NODE_ROOM_04", "type": "door" },
+    { "from": "NODE_HALL_02", "to": "NODE_BERC_01", "type": "door" },
+    { "from": "NODE_HALL_03", "to": "NODE_BERC_02", "type": "door" },
+    { "from": "NODE_HALL_06", "to": "NODE_MULTI",   "type": "door" },
+
+    { "from": "NODE_HALL_04", "to": "NODE_CAFE_01", "type": "door" },
+    { "from": "NODE_CAFE_01", "to": "NODE_CAFE_02", "type": "corridor" },
+    { "from": "NODE_CAFE_01", "to": "NODE_KITCHEN_02", "type": "door" },
+
+    { "from": "NODE_KITCHEN_01", "to": "NODE_KITCHEN_02", "type": "corridor" },
+    { "from": "NODE_KITCHEN_02", "to": "NODE_KITCHEN_03", "type": "corridor" },
+
+    { "from": "NODE_HALL_01", "to": "NODE_PATIO",        "type": "outdoor" },
+    { "from": "NODE_PATIO",   "to": "NODE_PLAYGROUND_01","type": "outdoor" },
+    { "from": "NODE_PATIO",   "to": "NODE_PLAYGROUND_02","type": "outdoor" },
+    { "from": "NODE_PATIO",   "to": "NODE_PLAYGROUND_03","type": "outdoor" },
+    { "from": "NODE_PLAYGROUND_01", "to": "NODE_PLAYGROUND_02", "type": "outdoor" },
+    { "from": "NODE_PLAYGROUND_02", "to": "NODE_PLAYGROUND_03", "type": "outdoor" },
+
+    { "from": "NODE_HALL_02", "to": "NODE_FOUNTAIN", "type": "corridor" }
+  ]
+}
