@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "stage": "P11",
+    "note": "Inventário baseado nos scripts P03 e P08. Status: CONFIRMED (existe) ou MISSING (ausente)."
+  },
+  "elements": [
+    {
+      "id": "FURN_CLASS_TABLE_001",
+      "name": "Mesa infantil coletiva",
+      "category": "mobiliario_pedagogico",
+      "space_id": "SPC_CLASS_01",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "MISSING_CLASS_PANEL_001",
+      "name": "Painel pedagógico / Quadro",
+      "category": "mobiliario_pedagogico",
+      "space_id": "SPC_CLASS_01",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_BERC_CHANGER_001",
+      "name": "Trocador de fraldas",
+      "category": "equipamento_infantil",
+      "space_id": "SPC_BERC_01",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_WC_TOILET_001",
+      "name": "Vaso sanitário infantil",
+      "category": "equipamento_sanitario",
+      "space_id": "SPC_WC_01",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_WC_SINK_001",
+      "name": "Lavatório infantil",
+      "category": "equipamento_sanitario",
+      "space_id": "SPC_WC_01",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_KITCHEN_SINK_001",
+      "name": "Pia de cozinha industrial",
+      "category": "mobiliario_servico",
+      "space_id": "SPC_KITCHEN",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_KITCHEN_STOVE_001",
+      "name": "Fogão industrial",
+      "category": "mobiliario_servico",
+      "space_id": "SPC_KITCHEN",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_PLAYGROUND_SEESAW_001",
+      "name": "Gangorra",
+      "category": "parque_infantil",
+      "space_id": "PLAY_SAND",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_PATIO_BENCH_001",
+      "name": "Banco de madeira externo",
+      "category": "area_externa",
+      "space_id": "FLOOR_PATIO",
+      "status": "MISSING"
+    },
+    {
+      "id": "MISSING_SIGNAGE_001",
+      "name": "Placa de porta (Sanitário 01)",
+      "category": "sinalizacao",
+      "space_id": "SPC_WC_01",
+      "status": "MISSING"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "stage": "P11",
+    "description": "Backlog priorizado para as etapas P12 a P17."
+  },
+  "backlog": [
+    {
+      "phase": "P12",
+      "title": "Equipamentos Sanitários e Cozinha",
+      "items": [
+        "Criar vasos sanitários e lavatórios em SPC_WC_01 e 02.",
+        "Criar pias, fogão e geladeira na SPC_KITCHEN.",
+        "Garantir materiais cerâmicos e inox (P07)."
+      ]
+    },
+    {
+      "phase": "P13",
+      "title": "Berçários e Conforto",
+      "items": [
+        "Adicionar trocadores de fralda e poltronas.",
+        "Adicionar tapetes de EVA coloridos (para textura visual)."
+      ]
+    },
+    {
+      "phase": "P14",
+      "title": "Salas Pedagógicas e Biblioteca",
+      "items": [
+        "Adicionar quadros/quadros negros.",
+        "Criar nichos de leitura e prateleiras acessíveis.",
+        "Adicionar almofadas na sala multiuso."
+      ]
+    },
+    {
+      "phase": "P15",
+      "title": "Playground e Pátio",
+      "items": [
+        "Modelar gangorra e túnel de concreto.",
+        "Adicionar bancos e mesas externas no pátio.",
+        "Adicionar lixeiras."
+      ]
+    },
+    {
+      "phase": "P16",
+      "title": "Sinalização",
+      "items": [
+        "Criar placas 3D (usando texto ou geometria) para as portas.",
+        "Aplicar sinalização de acessibilidade."
+      ]
+    },
+    {
+      "phase": "P17",
+      "title": "Otimização e Release",
+      "items": [
+        "Fazer o join (merge) de malhas estáticas para reduzir o tamanho do GLB.",
+        "Rodar auditoria final de WebGL e colisores."
+      ]
+    }
+  ]
+}

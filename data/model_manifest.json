@@ -1,7 +1,7 @@
 {
   "name": "EMERALD_SCHOOL",
-  "version": "4.0.0",
-  "stage": "P10",
+  "version": "4.1.0",
+  "stage": "P11",
   "generator": "blender/P10_final.py",
   "blender_version": "5.2 LTS",
   "glb_path": "assets/EMERALD_SCHOOL.glb",
@@ -20,9 +20,11 @@
     "markers": "markers.json",
     "obstacles": "obstacles.json",
     "hazards": "hazards.json",
-    "materials": "material_manifest.json",
-    "furniture": "furniture_manifest.json",
-    "lighting": "lighting_manifest.json"
+    "materials":  "material_manifest.json",
+    "furniture":  "furniture_manifest.json",
+    "lighting":   "lighting_manifest.json",
+    "element_inventory": "element_inventory.json",
+    "room_plan": "room_equipment_plan.json"
   },
   "sha256": "7107B1B62F8E6825F41E2FB929C5A661CC7E9E81376F2383E828C628DCE"
 }

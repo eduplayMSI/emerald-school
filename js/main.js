@@ -1,4 +1,4 @@
-import * as THREE from 'three'; // IMPORTAÇÃO ESSENCIAL AQUI
+import * as THREE from 'three'; // Importação essencial
 import { initScene, loadModel, addToScene, startRenderLoop, bindResize, getCamera, getScene } from './scene.js';
 import { initPlayer, updatePlayer, resetPosition } from './player.js';
 import { initCollision, addCollidersFromModel, resolveCollisions } from './collision.js';
@@ -18,34 +18,20 @@ async function bootstrap() {
     initPlayer();
     initCollision();
 
-    // Cache-buster atualizado para ?v=8
-    const model = await loadModel('./assets/EMERALD_SCHOOL.glb?v=8', setProgress);
+    // Cache-buster ?v=10 para forçar o navegador a baixar o novo código
+    const model = await loadModel('./assets/EMERALD_SCHOOL.glb?v=10', setProgress);
     addToScene(model);
     window.__emerald_model = model;
 
-    // FORÇAR COR DO PISO (À PROVA DE FALHAS)
-    const floorColors = [
-        { match: 'floor_corridor', color: 0xD1C6B4 },
-        { match: 'floor_spc_class', color: 0xC9A882 },
-        { match: 'floor_spc_berc', color: 0xFAFAFA },
-        { match: 'floor_spc_wc', color: 0x9CA3A8 },
-        { match: 'floor_spc_kitchen', color: 0x9CA3A8 },
-        { match: 'floor_spc_cafe', color: 0xBFC9CE },
-        { match: 'floor_patio', color: 0xB84D47 }
-    ];
-
+    console.group("[EMERALD] Correção de Normais (Piso)");
     model.traverse(child => {
-        if (!child.isMesh) return;
-        const name = child.name.toLowerCase();
-        const match = floorColors.find(f => name.includes(f.match));
-        if (match) {
-            child.material = new THREE.MeshStandardMaterial({
-                color: match.color,
-                roughness: 0.65,
-                metalness: 0.0
-            });
+        if (child.isMesh && child.name.toLowerCase().includes('floor')) {
+            // Força a renderização frente e verso para consertar normais invertidas
+            child.material.side = THREE.DoubleSide;
+            console.log(`Objeto: ${child.name} | Material: ${child.material.name} | DoubleSide: ATIVADO`);
         }
     });
+    console.groupEnd();
 
     enableShadows(model);
     addCollidersFromModel(model);
@@ -94,7 +80,6 @@ function handleTeleport(waypoint) {
     const p = getPlayerPos();
     p.x = waypoint[0];
     p.z = waypoint[2];
-    console.log(`[EMERALD] teleport demonstrativo → (${p.x.toFixed(2)}, ${p.z.toFixed(2)})`);
   });
 }
 

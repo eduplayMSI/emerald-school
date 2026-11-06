@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "stage": "P11",
+    "description": "Mapeamento de elementos necessários por ambiente para as próximas etapas."
+  },
+  "plan": [
+    {
+      "space_id": "SPC_CLASS_01",
+      "type": "sala_atividades",
+      "existing": ["1 mesa central", "4 cadeiras", "1 estante"],
+      "to_add": ["Painel pedagógico (parede norte)", "Tapete de leitura", "Armário baixo de escaninho"]
+    },
+    {
+      "space_id": "SPC_BERC_01",
+      "type": "bercario",
+      "existing": ["2 berços", "1 estante"],
+      "to_add": ["Trocador fixo na parede", "Poltrona de amamentação", "Tapete de estimulação"]
+    },
+    {
+      "space_id": "SPC_WC_01",
+      "type": "banheiro_infantil",
+      "existing": [],
+      "to_add": ["2 vasos sanitários", "2 lavatórios", "1 espelho", "Divisória de box"]
+    },
+    {
+      "space_id": "SPC_KITCHEN",
+      "type": "cozinha",
+      "existing": ["2 bancadas inox"],
+      "to_add": ["Pia industrial", "Fogão de 4 bocas", "Geladeira", "Coifa"]
+    },
+    {
+      "space_id": "PLAY_SAND",
+      "type": "parque",
+      "existing": ["1 escorregador", "1 balanço"],
+      "to_add": ["Gangorra", "Túnel de concreto", "Painel sensorial"]
+    },
+    {
+      "space_id": "FLOOR_PATIO",
+      "type": "patio_coberto",
+      "existing": [],
+      "to_add": ["2 bancos de madeira", "1 mesa de convivência", "Lixeiras seletivas"]
+    }
+  ]
+}

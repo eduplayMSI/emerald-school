@@ -19,14 +19,14 @@ export function initScene() {
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   
-  // P10: Tone mapping para evitar cores estouradas e escurecimento
+  // P10: Tone mapping para evitar cores estouradas
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 1.0;
   
   document.body.appendChild(renderer.domElement);
 
-  // Sol Nordestino
-  const sun = new THREE.DirectionalLight(0xFFFAED, 2.8);
+  // 1. Sol (Sombras nítidas)
+  const sun = new THREE.DirectionalLight(0xFFFAED, 2.5);
   sun.position.set(45, 80, 20);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
@@ -39,15 +39,16 @@ export function initScene() {
   sun.shadow.bias = -0.0005;
   scene.add(sun);
 
-  // LUZ NEUTRA: Impede que as paredes amarelas fiquem verdes
-  const hemi = new THREE.HemisphereLight(0xffffff, 0xdddddd, 0.9);
+  // 2. Luz Hemisférica NEUTRA (Céu branco, Chão cinza)
+  // Isso impede que a luz azul pinte as paredes amarelas de verde.
+  const hemi = new THREE.HemisphereLight(0xffffff, 0xcccccc, 0.7);
   scene.add(hemi);
 
-  // Luz ambiente para leitura de interiores
-  const amb = new THREE.AmbientLight(0xffffff, 0.35);
+  // 3. Luz Ambiente para interiores
+  const amb = new THREE.AmbientLight(0xffffff, 0.4);
   scene.add(amb);
 
-  // Chão de teste (fallback)
+  // Chão de fallback
   const groundMat = new THREE.MeshStandardMaterial({ color: 0x6e8b4a, roughness: 0.95 });
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), groundMat);
   ground.rotation.x = -Math.PI / 2;
